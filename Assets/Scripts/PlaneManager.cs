@@ -5,17 +5,15 @@ using UnityEngine;
 public class PlaneManager : MonoBehaviour
 {
     [SerializeField] GameObject spawnpoint;
-    [SerializeField] List<GameObject> prefabstobespawned;
+    [SerializeField] GameObject prefabstobespawned;
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "PlaneDestroyer")
+        if(other.gameObject.tag == "Wall")
         {
             Destroy(other.gameObject);
 
-            //spaawning
-            int i = Random.Range(0, prefabstobespawned.Count);
-            GameObject spawner = prefabstobespawned[i];
+            GameObject spawner = prefabstobespawned;
             Instantiate(spawner,spawnpoint.transform.position, Quaternion.identity);
         }
     }
