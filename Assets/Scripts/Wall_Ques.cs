@@ -5,7 +5,8 @@ using TMPro;
 
 public class Wall_Ques : MonoBehaviour
 {
-    public List<char> op;
+    private List<char> op;
+    public char randomOperator;
     public int n;
     public TextMeshProUGUI equation;
 
@@ -13,9 +14,8 @@ public class Wall_Ques : MonoBehaviour
     {
         op = new List<char> { '+', '-', 'X', '/' };
         int opIndex = Random.Range(0, op.Count);
-        char randomOperator = op[opIndex];
-        n = Random.Range(0, 20);
-        Debug.Log("Equation: " + randomOperator + " " + n);
+        randomOperator = op[opIndex];
+        n = Random.Range(1, 10);
         if (equation != null)
         {
             equation.text = randomOperator + " " + n;
