@@ -5,6 +5,7 @@ using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -35,7 +36,12 @@ public class GameManager : MonoBehaviour
         {
             if (characterPos[i].childCount > 0)
             {
-                Destroy(characterPos[i].GetChild(0).gameObject);
+
+                for (int io = 0; io < characterPos[i].childCount; io++)
+                {
+                    Destroy(characterPos[i].GetChild(io).gameObject);
+                }
+               
             }
         }
 
@@ -99,10 +105,14 @@ public class GameManager : MonoBehaviour
 
             UpdateCharacters(CurrentNum.characterNum);
             playerCount.text = CurrentNum.characterNum.ToString();
-            if (CurrentNum.characterNum <= 0)
-            {
-                Application.Quit();
-            }
+
+
+           
+           
         }
     }
+
+
+
+
 }
