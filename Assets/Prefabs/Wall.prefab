@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 189fdf4ba407ff4469f163ae7c59a3e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  op: 
+  randomOperator: 0
   n: 0
   equation: {fileID: 5897727640591233804}
 --- !u!1 &2134822928982282116
@@ -546,7 +546,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 189fdf4ba407ff4469f163ae7c59a3e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  op: 
+  randomOperator: 0
   n: 0
   equation: {fileID: 1579044184624694047}
 --- !u!1 &6979918843450000839

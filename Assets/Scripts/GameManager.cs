@@ -1,6 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,6 +14,7 @@ public class GameManager : MonoBehaviour
     public GameObject Supercharacter;
     public GameObject SuperUltracharacter;
     public GameObject ProMaxCharacter;
+    public TextMeshProUGUI playerCount;
 
     public void UpdateCharacters(int totalCount)
     {
@@ -70,16 +75,34 @@ public class GameManager : MonoBehaviour
             if(other.gameObject.GetComponent<Wall_Ques>().randomOperator=='+')
             CurrentNum.characterNum += num;
             if (other.gameObject.GetComponent<Wall_Ques>().randomOperator == '/')
-                CurrentNum.characterNum = CurrentNum.characterNum/num;
+            {
+                CurrentNum.characterNum = CurrentNum.characterNum / num;
+                if (CurrentNum.characterNum < 0)
+                {
+                    CurrentNum.characterNum = 0;
+                }
+            }
             if (other.gameObject.GetComponent<Wall_Ques>().randomOperator == 'X')
                 CurrentNum.characterNum = CurrentNum.characterNum* num;
             if (other.gameObject.GetComponent<Wall_Ques>().randomOperator == '-')
             {
                 CurrentNum.characterNum = CurrentNum.characterNum - num;
-                if(CurrentNum.characterNum<0)
+                if (CurrentNum.characterNum < 0)
+                {
                     CurrentNum.characterNum = 0;
+                }
             }
+            if (other.gameObject.GetComponent<Wall_Ques>().randomOperator == '#')
+            {
+                CurrentNum.characterNum = (int)math.sqrt(CurrentNum.characterNum);
+            }
+
             UpdateCharacters(CurrentNum.characterNum);
+            playerCount.text = CurrentNum.characterNum.ToString();
+            if (CurrentNum.characterNum <= 0)
+            {
+                Application.Quit();
+            }
         }
     }
 }

@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class CurrentNum : MonoBehaviour
 {
-    public static int characterNum=1; 
+    public static int characterNum=1;
 }
