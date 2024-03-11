@@ -100,7 +100,7 @@ public class Swipe : MonoBehaviour
         var stop = movementSpeed * Time.deltaTime;
 
         rb.gameObject.transform.position = Vector3.MoveTowards(rb.gameObject.transform.position, lanePs[currentIndex], stop);
-        Camera.main.transform.position = Vector3.MoveTowards(Camera.main.transform.position, new Vector3(lanePs[currentIndex].x, Camera.main.transform.position.y, Camera.main.transform.position.z), stop);
+       /* Camera.main.transform.position = Vector3.MoveTowards(Camera.main.transform.position, new Vector3(lanePs[currentIndex].x, Camera.main.transform.position.y, Camera.main.transform.position.z), stop);*/
 
 
         /*        // Calculate the target rotation

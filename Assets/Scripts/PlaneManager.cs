@@ -10,7 +10,7 @@ public class PlaneManager : MonoBehaviour
     int iterationCount = 1;
     int factor = 5;
     public AnimationChanger changer;
-
+    public GameObject explosion;
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Wall")
@@ -86,8 +86,7 @@ public class PlaneManager : MonoBehaviour
 
             if (CurrentNum.EnemiesCount > CurrentNum.characterNum)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-                CurrentNum.reset();
+                StartCoroutine(ExplosionShow());
             }
             else
             {
@@ -97,6 +96,18 @@ public class PlaneManager : MonoBehaviour
 
 
         }
+    }
+
+    IEnumerator ExplosionShow()
+    {
+        yield return new WaitForSeconds(2);
+        explosion.gameObject.SetActive(true);
+        yield return new WaitForSeconds(0.6f);
+        explosion.gameObject.SetActive(false);
+        explosion.gameObject.SetActive(true);
+        yield return new WaitForSeconds(0.6f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        CurrentNum.reset();
     }
 
 }
