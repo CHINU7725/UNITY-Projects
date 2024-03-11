@@ -48,7 +48,7 @@ ModelImporter:
       loopBlend: 0
       loopBlendOrientation: 1
       loopBlendPositionY: 1
-      loopBlendPositionXZ: 1
+      loopBlendPositionXZ: 0
       keepOriginalOrientation: 1
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
@@ -603,7 +603,8 @@ ModelImporter:
     - name: mixamorig:LeftHandThumb3
       parentName: mixamorig:LeftHandThumb2
       position: {x: -0, y: 0.035095997, z: 0}
-      rotation: {x: 0.000000017276708, y: 0.000000009567411, z: -0.000000023572838, w: 1}
+      rotation: {x: 0.000000017276708, y: 0.000000009567411, z: -0.000000023572838,
+        w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: mixamorig:LeftHandThumb4
       parentName: mixamorig:LeftHandThumb3
@@ -643,7 +644,8 @@ ModelImporter:
     - name: mixamorig:LeftHandMiddle3
       parentName: mixamorig:LeftHandMiddle2
       position: {x: -0, y: 0.029847, z: 0}
-      rotation: {x: 0.000000007907626, y: 0.000000003935416, z: 0.0000000063253895, w: 1}
+      rotation: {x: 0.000000007907626, y: 0.000000003935416, z: 0.0000000063253895,
+        w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: mixamorig:LeftHandMiddle4
       parentName: mixamorig:LeftHandMiddle3
@@ -683,7 +685,8 @@ ModelImporter:
     - name: mixamorig:LeftHandPinky3
       parentName: mixamorig:LeftHandPinky2
       position: {x: -0, y: 0.021766, z: 0}
-      rotation: {x: -0.00000005101367, y: -0.000000022193205, z: -0.000000018248837, w: 1}
+      rotation: {x: -0.00000005101367, y: -0.000000022193205, z: -0.000000018248837,
+        w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: mixamorig:LeftHandPinky4
       parentName: mixamorig:LeftHandPinky3
@@ -723,7 +726,8 @@ ModelImporter:
     - name: mixamorig:RightHandThumb3
       parentName: mixamorig:RightHandThumb2
       position: {x: -0, y: 0.035097998, z: 0}
-      rotation: {x: -0.00000003138691, y: 0.000000073846856, z: -0.00000004568197, w: 1}
+      rotation: {x: -0.00000003138691, y: 0.000000073846856, z: -0.00000004568197,
+        w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: mixamorig:RightHandThumb4
       parentName: mixamorig:RightHandThumb3

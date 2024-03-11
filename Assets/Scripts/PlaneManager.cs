@@ -96,7 +96,10 @@ public class PlaneManager : MonoBehaviour
 
 
         }
+
     }
+
+
 
     IEnumerator ExplosionShow()
     {
