@@ -9,6 +9,7 @@ public class PlaneManager : MonoBehaviour
     [SerializeField] GameObject prefabstobespawned;
     int iterationCount = 1;
     int factor = 5;
+    public AnimationChanger changer;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -18,6 +19,7 @@ public class PlaneManager : MonoBehaviour
             iterationCount++;
             GameObject spawner = prefabstobespawned;
            var op= Instantiate(spawner, spawnpoint.transform.position, Quaternion.identity);
+            CurrentNum.EnemyDead = false;
             EnemiesShow enemies = op.transform.GetChild(2).GetComponent<EnemiesShow>();
             int max = 0;
             GameObject[] ino = new GameObject[2];
@@ -87,6 +89,13 @@ public class PlaneManager : MonoBehaviour
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                 CurrentNum.reset();
             }
+            else
+            {
+                changer.PlayerWin(op);
+            }
+
+
+
         }
     }
 

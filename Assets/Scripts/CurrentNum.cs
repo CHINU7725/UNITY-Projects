@@ -10,11 +10,13 @@ public class CurrentNum : MonoBehaviour
 
     public static int EnemiesCount=0;
 
+    public static bool EnemyDead=true;
 
     public static void reset()
     {
         characterNum = 1;
         PrevNum = 1 ;
         EnemiesCount = 0;
+        EnemyDead = true; ;
     }
 }

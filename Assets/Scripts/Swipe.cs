@@ -27,6 +27,9 @@ public class Swipe : MonoBehaviour
     public float movementSpeed=12f;
     public float rotationSpeed=10f;
 
+
+    public ViewEnemies ve;
+
     void Start()
     {
         lanePs = new Vector3[3];
@@ -97,14 +100,38 @@ public class Swipe : MonoBehaviour
         var stop = movementSpeed * Time.deltaTime;
 
         rb.gameObject.transform.position = Vector3.MoveTowards(rb.gameObject.transform.position, lanePs[currentIndex], stop);
-        Camera.main.transform.position = Vector3.MoveTowards(Camera.main.transform.position, new Vector3(lanePs[currentIndex].x, Camera.main.transform.position.y, Camera.main.transform.position.z), stop);
+        /*       Camera.main.transform.position = Vector3.MoveTowards(Camera.main.transform.position, new Vector3(lanePs[currentIndex].x, Camera.main.transform.position.y, Camera.main.transform.position.z), stop);*/
 
 
-        // Calculate the target rotation
-        Quaternion targetRotation = Quaternion.LookRotation(target.position - rb.gameObject.transform.position, Vector3.up);
+        /*        // Calculate the target rotation
+                Quaternion targetRotation = Quaternion.LookRotation(target.position - rb.gameObject.transform.position, Vector3.up);
 
-        // Apply smooth rotation towards the target
-        rb.gameObject.transform.rotation = Quaternion.Slerp(rb.gameObject.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+                // Apply smooth rotation towards the target
+                rb.gameObject.transform.rotation = Quaternion.Slerp(rb.gameObject.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);*/
+
+
+        if (!CurrentNum.EnemyDead)
+        {
+            ve.LookEach();
+        }
+        else
+        {
+
+            List<Transform> playerTransforms = ve.GetValidChildTransforms(rb.gameObject, "Pos");
+            Debug.LogWarning("shjdf");
+            for (int i = 0; i < playerTransforms.Count; i++)
+            {
+                Transform playerChild = ve.GetValidChild(playerTransforms[i]);
+
+                Quaternion targetRotation = Quaternion.LookRotation(target.position - playerChild.position, Vector3.up);
+
+                // Apply smooth rotation towards the target
+                playerChild.rotation = Quaternion.Slerp(playerChild.rotation, targetRotation, 7f * Time.deltaTime);
+
+            }
+
+
+        }
     }
 
 }

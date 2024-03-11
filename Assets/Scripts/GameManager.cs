@@ -15,7 +15,9 @@ public class GameManager : MonoBehaviour
     public GameObject Supercharacter;
     public GameObject SuperUltracharacter;
     public GameObject ProMaxCharacter;
-    public TextMeshProUGUI playerCount;
+ /*   public TextMeshProUGUI playerCount;*/
+
+
 
     public void UpdateCharacters(int totalCount)
     {
@@ -104,8 +106,7 @@ public class GameManager : MonoBehaviour
             }
 
             UpdateCharacters(CurrentNum.characterNum);
-            playerCount.text = CurrentNum.characterNum.ToString();
-
+       /*     playerCount.text = CurrentNum.characterNum.ToString();*/
 
            
            
