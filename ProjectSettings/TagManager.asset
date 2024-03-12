@@ -9,6 +9,7 @@ TagManager:
   - Enemies
   - Ground
   - StartFire
+  - Bridge
   layers:
   - Default
   - TransparentFX
