@@ -106,7 +106,6 @@ public class GameManager : MonoBehaviour
             }
 
             UpdateCharacters(CurrentNum.characterNum);
-       /*     playerCount.text = CurrentNum.characterNum.ToString();*/
 
            
            
