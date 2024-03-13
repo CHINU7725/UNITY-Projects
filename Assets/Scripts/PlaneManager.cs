@@ -7,10 +7,11 @@ public class PlaneManager : MonoBehaviour
 {
     [SerializeField] GameObject spawnpoint;
     [SerializeField] GameObject prefabstobespawned;
-    int iterationCount = 1;
+    int iterationCount = 0;
     int factor = 5;
     public AnimationChanger changer;
     public GameObject explosion;
+    public ViewEnemies ve;
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Wall")
@@ -57,18 +58,20 @@ public class PlaneManager : MonoBehaviour
             Debug.Log("pinky " + max);
             Destroy(other.gameObject);
             GameObject[] innerWalls = GameObject.FindGameObjectsWithTag("InnerWall");
-            if (iterationCount % factor == 0)
+            if (iterationCount < OperatorList.operatorList.Count)
             {
-
+                Debug.LogError("edhdfdh");
                 factor = Random.Range(4, 7);
-                iterationCount = 1;
 
 
                 // Loop through the array of inner walls
                 foreach (GameObject innerWall in innerWalls)
                 {
+                   
                     // Do something with each inner wall, for example:
-                    innerWall.GetComponent<Wall_Ques>().reducePlayer(); // Replace YourInnerWallScript with the actual script on your InnerWall objects
+                    innerWall.GetComponent<Wall_Ques>().FixedOperators(iterationCount);
+
+                   
                 }
 
             }
@@ -94,6 +97,7 @@ public class PlaneManager : MonoBehaviour
             }
 
 
+            ve.AddPlayer(op.transform.GetChild(2).gameObject);
 
         }
 

@@ -31,15 +31,29 @@ public class PlayerGunSelector : MonoBehaviour
 
     }
 
-    public void Shoot()
+    public void Shoot(GameObject target)
     {
+  
         if (Time.time > ShootConfig.fireRate + LastShootTime)
         {
             LastShootTime = Time.time;
             Debug.Log("Raghav");
+
             ShootSystem.Play();
-            Vector3 shootDirection =- ShootSystem.transform.forward + new Vector3(Random.Range(-ShootConfig.Spread.x, ShootConfig.Spread.x), Random.Range(-ShootConfig.Spread.y, ShootConfig.Spread.y), Random.Range(-ShootConfig.Spread.z, ShootConfig.Spread.z));
-            shootDirection.Normalize();
+
+            Vector3 shootDirection;
+
+            if (CurrentNum.enemyPosition!=Vector3.up)
+            {
+                // Calculate the direction towards the target
+                shootDirection = (target.transform.position - ShootSystem.transform.position).normalized;
+            }
+            else
+            {
+                // If no target is provided, shoot in the forward direction of the ShootSystem
+                shootDirection = -ShootSystem.transform.forward;
+            }
+
             if (Physics.Raycast(ShootSystem.transform.position, shootDirection, out RaycastHit hit, float.MaxValue, ShootConfig.HitMask))
             {
                 StartCoroutine(PlayTrail(ShootSystem.transform.position, hit.point, hit));

@@ -13,29 +13,7 @@ public class Wall_Ques : MonoBehaviour
 
     private void Awake()
     {
-        op = new List<char> { '+', 'X',};
-         int opIndex = 0;
-
-        opIndex = Random.Range(0, op.Count);
-
-        randomOperator = op[opIndex];
-        if (randomOperator == 'X')
-        {
-            n = Random.Range(2, 4);
-        }
-        else
-        {
-            n = Random.Range(1, 10);
-        }
-
-        if (equation != null)
-        {
-            equation.text = randomOperator + " " + n;
-        }
-        else
-        {
-            Debug.LogError("TextMeshProUGUI element reference not set in the inspector!");
-        }
+        FixedOperators(0);
     }
 
     public void AssignOperater()
@@ -136,6 +114,22 @@ public class Wall_Ques : MonoBehaviour
         {
             Debug.LogError("TextMeshProUGUI element reference not set in the inspector!");
         }
+    }
+
+
+
+    public void FixedOperators(int index)
+    {
+        if(this.gameObject.name=="Left")
+        {
+            randomOperator = OperatorList.operatorList[index][0];
+        }
+        else
+        {
+            randomOperator = OperatorList.operatorList[index][1];
+        }
+        n = Random.Range(1, 5);
+        equation.text = randomOperator + " " + n;
     }
 
 }

@@ -22,8 +22,12 @@ public class ViewEnemies : MonoBehaviour
         playersParent = GameObject.FindGameObjectWithTag("Player");
         enemiesParent = GameObject.FindGameObjectWithTag("Enemies");
 
+        CurrentNum.enemyPosition = enemiesParent.transform.position;
+
         playerTransforms = GetValidChildTransforms(playersParent, "Pos");
         enemyTransforms = GetValidChildTransforms(enemiesParent, "Pos");
+
+
 
         Debug.Log(playerTransforms.Count + "dnhjdfh" + enemyTransforms.Count);
 
@@ -42,6 +46,50 @@ public class ViewEnemies : MonoBehaviour
 
             RotateTowards(playerChild, enemyChild);
             RotateTowards(enemyChild, playerChild);
+
+
+
+        }
+    }
+
+
+    public void AddPlayer(GameObject enemies)
+    {
+
+
+
+       GameObject playersParent = GameObject.FindGameObjectWithTag("Player");
+
+
+        CurrentNum.enemyPosition = enemies.transform.position;
+
+        playerTransforms = GetValidChildTransforms(playersParent, "Pos");
+        enemyTransforms = GetValidChildTransforms(enemies, "Pos");
+
+
+
+        Debug.Log(playerTransforms.Count + "dnhjdfh" + enemyTransforms.Count);
+        CurrentNum.LookCouple.Clear();
+        Debug.LogError(CurrentNum.LookCouple.ToArray());
+        // Ensure arrays have the same length
+        if (playerTransforms.Count != enemyTransforms.Count)
+        {
+            Debug.LogError("Players and enemies arrays must have the same length!");
+            return;
+        }
+
+        // Rotate players and enemies to face each other
+        for (int i = 0; i < playerTransforms.Count; i++)
+        {
+            Transform playerChild = GetValidChild(playerTransforms[i]);
+            Transform enemyChild = GetValidChild(enemyTransforms[i]);
+
+        
+        CurrentNum.LookCouple.Add(playerChild.gameObject, enemyChild.gameObject);
+
+            Debug.Log(CurrentNum.LookCouple);
+
+
         }
     }
 

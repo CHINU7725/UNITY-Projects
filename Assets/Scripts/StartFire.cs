@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class StartFire : MonoBehaviour
 {
+    public AudioSource audio;
 
 
 
@@ -27,21 +28,22 @@ public class StartFire : MonoBehaviour
     IEnumerator ShootForDuration()
     {
         float timer = 0f;
-        float duration = 4f; // Duration to shoot for in seconds
+        float duration = 4f;
+        audio.Play();// Duration to shoot for in seconds
 
         while (timer < duration)
         {
             for (int i = 0; i < playerTransforms.Count; i++)
             {
                 Transform playerChild = GetValidChild(playerTransforms[i]);
-                playerChild.GetComponent<PlayerGunSelector>().Shoot();
+                playerChild.GetComponent<PlayerGunSelector>().Shoot(CurrentNum.LookCouple[playerChild.gameObject]);
             }
 
             // Wait for the next frame
             yield return null;
             timer += Time.deltaTime;
         }
-
+        audio.Stop();
         // Coroutine finished, reset the shooting coroutine reference
         shootingCoroutine = null;
     }

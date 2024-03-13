@@ -12,6 +12,11 @@ public class CurrentNum : MonoBehaviour
 
     public static bool EnemyDead=true;
 
+    public static Vector3 enemyPosition=Vector3.up;
+
+    public static Dictionary<GameObject,GameObject> LookCouple=new Dictionary<GameObject, GameObject>();
+    
+
     public static void reset()
     {
         characterNum = 1;
@@ -19,4 +24,7 @@ public class CurrentNum : MonoBehaviour
         EnemiesCount = 0;
         EnemyDead = true; ;
     }
+
+
+
 }

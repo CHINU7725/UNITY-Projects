@@ -3720,7 +3720,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 189fdf4ba407ff4469f163ae7c59a3e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomOperator: 0
+  randomOperator: 49
   n: 0
   equation: {fileID: 2876080343527235001}
 --- !u!1 &2200631865988895803
@@ -4712,7 +4712,7 @@ GameObject:
   - component: {fileID: 4485535754828405428}
   - component: {fileID: 2409500719913317139}
   m_Layer: 0
-  m_Name: Cube (3)
+  m_Name: Left
   m_TagString: InnerWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7173,6 +7173,7 @@ MonoBehaviour:
     type: 3}
   changer: {fileID: 5182660905052041588}
   explosion: {fileID: 1272448312}
+  ve: {fileID: 2381473267499285675}
 --- !u!1 &8249780390421602744
 GameObject:
   m_ObjectHideFlags: 0
@@ -7187,7 +7188,7 @@ GameObject:
   - component: {fileID: 4408286098424526842}
   - component: {fileID: 2181570742297091848}
   m_Layer: 0
-  m_Name: Cube (4)
+  m_Name: Right
   m_TagString: InnerWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
