@@ -46,7 +46,7 @@ public class PlayerGunSelector : MonoBehaviour
             if (CurrentNum.enemyPosition!=Vector3.up)
             {
                 // Calculate the direction towards the target
-                shootDirection = (target.transform.position - ShootSystem.transform.position).normalized;
+                shootDirection = (new Vector3(target.transform.position.x, target.transform.position.y+2f, target.transform.position.z) - ShootSystem.transform.position).normalized;
             }
             else
             {

@@ -22,6 +22,11 @@ public class StartFire : MonoBehaviour
                 StopCoroutine(shootingCoroutine);
 
             shootingCoroutine = StartCoroutine(ShootForDuration());
+
+            if(CurrentNum.characterNum<CurrentNum.EnemiesCount)
+            {
+                audio.Stop();
+            }
         }
     }
 
