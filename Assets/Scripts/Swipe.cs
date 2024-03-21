@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
+using CandyCoded.HapticFeedback;
 
 public class Swipe : MonoBehaviour
 {
@@ -83,6 +84,7 @@ public class Swipe : MonoBehaviour
                 {
                     target = rightLook;
                     targetIndex = currentIndex - 1;
+                    HapticFeedback.MediumFeedback();
                 }
             }
             else if (endTouch.x < startTouch.x)
@@ -91,6 +93,7 @@ public class Swipe : MonoBehaviour
                 {
                     target = leftLook;
                     targetIndex = currentIndex + 1;
+                    HapticFeedback.MediumFeedback();
                 }
             }
         }

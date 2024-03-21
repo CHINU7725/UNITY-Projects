@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using CandyCoded.HapticFeedback;
 
 public class PlaneManager : MonoBehaviour
 {
@@ -109,9 +110,11 @@ public class PlaneManager : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         explosion.gameObject.SetActive(true);
+        HapticFeedback.HeavyFeedback();
         yield return new WaitForSeconds(0.6f);
         explosion.gameObject.SetActive(false);
         explosion.gameObject.SetActive(true);
+        HapticFeedback.HeavyFeedback();
         yield return new WaitForSeconds(0.6f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         CurrentNum.reset();
