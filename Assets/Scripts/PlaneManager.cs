@@ -95,6 +95,7 @@ public class PlaneManager : MonoBehaviour
             else
             {
                 changer.PlayerWin(op);
+           /*     op.GetComponentInChildren<StartFire>().enableRun();*/
             }
 
 

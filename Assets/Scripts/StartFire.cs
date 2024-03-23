@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class StartFire : MonoBehaviour
@@ -13,10 +15,18 @@ public class StartFire : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+
+
+
+
         if (other.gameObject.tag=="Player")
         {
+
             Debug.LogError("hjdch");
             playerTransforms = GetValidChildTransforms(other.gameObject, "Pos");
+
+           
+
 
             if (shootingCoroutine != null)
                 StopCoroutine(shootingCoroutine);
@@ -75,4 +85,43 @@ public class StartFire : MonoBehaviour
         else
             return null;
     }
+
+
+
+    public void disableRun()
+    {
+        foreach (Transform t in playerTransforms)
+        {
+            t.GetChild(0).gameObject.GetComponent<Animator>().SetBool("Idle", true);
+        }
+
+        GameObject[] objectsToEnable = GameObject.FindGameObjectsWithTag("Bridge");
+        this.GetComponentInParent<Plane>().enabled = false;
+
+
+        foreach (GameObject obj in objectsToEnable)
+        {
+            Debug.Log(obj);
+            obj.GetComponent<Plane>().enabled = false;
+        }
+    }
+
+    public void enableRun()
+    {
+        foreach (Transform t in playerTransforms)
+        {
+            t.GetChild(0).gameObject.GetComponent<Animator>().SetBool("Idle", false);
+        }
+
+        GameObject[] objectsToEnable = GameObject.FindGameObjectsWithTag("Bridge");
+        this.GetComponentInParent<Plane>().enabled = true;
+
+
+        foreach (GameObject obj in objectsToEnable)
+        {
+            Debug.Log(obj);
+            obj.GetComponent<Plane>().enabled = true;
+        }
+    }
+
 }
