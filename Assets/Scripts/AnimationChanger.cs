@@ -29,7 +29,6 @@ public class AnimationChanger : MonoBehaviour
     private IEnumerator ActivateDeadAnimationAfterDelay(Animator animator)
     {
         yield return new WaitForSeconds(3f); // Wait for 4 seconds
-        Debug.LogWarning("khazxaa");
         if (animator != null)
         {
             animator.SetTrigger("Dead"); // Activate the "Dead" animation

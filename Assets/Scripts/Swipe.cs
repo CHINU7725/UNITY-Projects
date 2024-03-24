@@ -121,7 +121,6 @@ public class Swipe : MonoBehaviour
         {
 
             List<Transform> playerTransforms = ve.GetValidChildTransforms(rb.gameObject, "Pos");
-            Debug.LogWarning("shjdf");
 
             for (int i = 0; i < playerTransforms.Count; i++)
             {

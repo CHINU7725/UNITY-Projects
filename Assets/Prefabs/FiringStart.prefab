@@ -67,7 +67,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc5c2f03eea99864ab10f4db2e41785a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ve: {fileID: 0}
+  audio: {fileID: 0}
+  primaryCamera: {fileID: 8039809771498829006, guid: c1300cce3d2adae43925d5d681bb4782,
+    type: 3}
 --- !u!54 &3184909849339949488
 Rigidbody:
   m_ObjectHideFlags: 0

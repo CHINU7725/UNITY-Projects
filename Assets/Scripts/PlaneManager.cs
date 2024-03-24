@@ -31,7 +31,6 @@ public class PlaneManager : MonoBehaviour
             {
                 int futureNUmber = CurrentNum.PrevNum;
                 int num = innerW.gameObject.GetComponent<Wall_Ques>().n;
-                Debug.Log("xjdhjsdhjx" + num);
                 if (innerW.gameObject.GetComponent<Wall_Ques>().randomOperator == '+')
                     futureNUmber += num;
                 if (innerW.gameObject.GetComponent<Wall_Ques>().randomOperator == '/')
@@ -61,7 +60,6 @@ public class PlaneManager : MonoBehaviour
             GameObject[] innerWalls = GameObject.FindGameObjectsWithTag("InnerWall");
             if (iterationCount < OperatorList.operatorList.Count)
             {
-                Debug.LogError("edhdfdh");
                 factor = Random.Range(4, 7);
 
 

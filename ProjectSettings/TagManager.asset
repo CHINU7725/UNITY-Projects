@@ -11,6 +11,8 @@ TagManager:
   - StartFire
   - Bridge
   - BridgeSpawner
+  - Camera
+  - Joystick
   layers:
   - Default
   - TransparentFX

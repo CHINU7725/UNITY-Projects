@@ -3,30 +3,27 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Cinemachine;
 
 public class StartFire : MonoBehaviour
 {
     public AudioSource audio;
-
-
-
+    private GameObject primaryCamera;
+    private GameObject joystickCanvas;
     List<Transform> playerTransforms = new List<Transform>();
     private Coroutine shootingCoroutine;
 
+    private void Start()
+    {
+        primaryCamera = GameObject.FindGameObjectWithTag("Camera");
+        joystickCanvas = GameObject.FindGameObjectWithTag("Joystick");
+    }
     private void OnTriggerEnter(Collider other)
     {
-
-
-
-
         if (other.gameObject.tag=="Player")
         {
-
-            Debug.LogError("hjdch");
+            disableRun();
             playerTransforms = GetValidChildTransforms(other.gameObject, "Pos");
-
-           
-
 
             if (shootingCoroutine != null)
                 StopCoroutine(shootingCoroutine);
@@ -38,6 +35,7 @@ public class StartFire : MonoBehaviour
                 audio.Stop();
             }
         }
+        //enableRun();
     }
 
     IEnumerator ShootForDuration()
@@ -90,6 +88,8 @@ public class StartFire : MonoBehaviour
 
     public void disableRun()
     {
+        primaryCamera.SetActive(false);
+        joystickCanvas.SetActive(true);
         foreach (Transform t in playerTransforms)
         {
             t.GetChild(0).gameObject.GetComponent<Animator>().SetBool("Idle", true);
@@ -97,17 +97,19 @@ public class StartFire : MonoBehaviour
 
         GameObject[] objectsToEnable = GameObject.FindGameObjectsWithTag("Bridge");
         this.GetComponentInParent<Plane>().enabled = false;
+        
 
 
         foreach (GameObject obj in objectsToEnable)
         {
-            Debug.Log(obj);
             obj.GetComponent<Plane>().enabled = false;
         }
     }
 
     public void enableRun()
     {
+        primaryCamera.SetActive(true);
+        joystickCanvas.SetActive(false);
         foreach (Transform t in playerTransforms)
         {
             t.GetChild(0).gameObject.GetComponent<Animator>().SetBool("Idle", false);
@@ -119,9 +121,7 @@ public class StartFire : MonoBehaviour
 
         foreach (GameObject obj in objectsToEnable)
         {
-            Debug.Log(obj);
             obj.GetComponent<Plane>().enabled = true;
         }
     }
-
 }
