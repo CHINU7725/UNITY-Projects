@@ -557,6 +557,7 @@ GameObject:
   - component: {fileID: 2105317751733558177}
   - component: {fileID: 5552749691193546121}
   - component: {fileID: -6687338699328444318}
+  - component: {fileID: -5854213665075072404}
   m_Layer: 0
   m_Name: Swat (5)
   m_TagString: Untagged
@@ -615,6 +616,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Gun: 0
+  bloodEffect: {fileID: 3548588485384254794, guid: 2f9e7dc163581394da1e00b561eed65d,
+    type: 3}
   ShootConfig: {fileID: 11400000, guid: 19e66a05f48c3734f81e78270036af45, type: 2}
   TrailConfig: {fileID: 11400000, guid: fedeb213d27248147b0c369b2b2adfc4, type: 2}
   gune: {fileID: 4503594963349393845}
@@ -631,6 +634,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GunSelector: {fileID: 5552749691193546121}
+--- !u!114 &-5854213665075072404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2549952320137572777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 789d56ec995462a45920172db30249d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rotateSpeed: 80
+  ve: {fileID: 0}
 --- !u!1 &2888067826021521417
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,6 +9,8 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
     public float Vertical { get { return (snapY) ? SnapFloat(input.y, AxisOptions.Vertical) : input.y; } }
     public Vector2 Direction { get { return new Vector2(Horizontal, Vertical); } }
 
+
+
     public float HandleRange
     {
         get { return handleRange; }
@@ -20,6 +22,7 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
         get { return deadZone; }
         set { deadZone = Mathf.Abs(value); }
     }
+
 
     public AxisOptions AxisOptions { get { return AxisOptions; } set { axisOptions = value; } }
     public bool SnapX { get { return snapX; } set { snapX = value; } }
@@ -33,13 +36,15 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
 
     [SerializeField] protected RectTransform background = null;
     [SerializeField] private RectTransform handle = null;
-    private RectTransform baseRect = null;
 
+    private RectTransform baseRect = null;
+   
     private Canvas canvas;
     private Camera cam;
 
     private Vector2 input = Vector2.zero;
 
+    private bool isButtonPressed = false;
     protected virtual void Start()
     {
         HandleRange = handleRange;
@@ -56,14 +61,42 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
         handle.pivot = center;
         handle.anchoredPosition = Vector2.zero;
     }
+    public void Update()
+    {
+        
+        if (isButtonPressed)
+        {
+            shootAll();
+        }
+        if(CurrentNum.enemies.Count == CurrentNum.EnemyDeadCount)
+        {
+            input = Vector2.zero;
+            isButtonPressed = false;
+            handle.anchoredPosition = Vector2.zero;
+        }
+
+
+    }
 
     public virtual void OnPointerDown(PointerEventData eventData)
     {
+
+        isButtonPressed = true;
         OnDrag(eventData);
+    }
+
+
+    public void shootAll()
+    {
+        foreach (GameObject op in CurrentNum.players)
+        {
+            op.GetComponent<PlayerGunSelector>().Shoot();
+        }
     }
 
     public void OnDrag(PointerEventData eventData)
     {
+
         cam = null;
         if (canvas.renderMode == RenderMode.ScreenSpaceCamera)
             cam = canvas.worldCamera;
@@ -132,6 +165,8 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
     public virtual void OnPointerUp(PointerEventData eventData)
     {
         input = Vector2.zero;
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<Swipe>().localView();
+        isButtonPressed = false;
         handle.anchoredPosition = Vector2.zero;
     }
 
@@ -145,6 +180,8 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
         }
         return Vector2.zero;
     }
+
+
 }
 
 public enum AxisOptions { Both, Horizontal, Vertical }

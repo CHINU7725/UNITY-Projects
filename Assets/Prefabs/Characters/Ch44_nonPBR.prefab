@@ -99,6 +99,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 5138556886774886725}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 55d8297502ea3134cba85745cb465d00,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -7576766988886222386}
   m_SourcePrefab: {fileID: 100100000, guid: 55d8297502ea3134cba85745cb465d00, type: 3}
 --- !u!1 &1084643510289347851 stripped
 GameObject:
@@ -119,6 +123,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Gun: 0
+  bloodEffect: {fileID: 3548588485384254794, guid: 2f9e7dc163581394da1e00b561eed65d,
+    type: 3}
   ShootConfig: {fileID: 11400000, guid: 19e66a05f48c3734f81e78270036af45, type: 2}
   TrailConfig: {fileID: 11400000, guid: fedeb213d27248147b0c369b2b2adfc4, type: 2}
   gune: {fileID: 2499168181116957795}
@@ -135,6 +141,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GunSelector: {fileID: 8487938323744024247}
+--- !u!114 &-7576766988886222386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084643510289347851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 789d56ec995462a45920172db30249d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rotateSpeed: 80
+  ve: {fileID: 0}
 --- !u!4 &6057107655062726878 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -2899422035419094908, guid: 55d8297502ea3134cba85745cb465d00,

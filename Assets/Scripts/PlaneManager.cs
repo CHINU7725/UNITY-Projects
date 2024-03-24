@@ -10,7 +10,7 @@ public class PlaneManager : MonoBehaviour
     [SerializeField] GameObject prefabstobespawned;
     int iterationCount = 0;
     int factor = 5;
-    public AnimationChanger changer;
+/*    public AnimationChanger changer;*/
     public GameObject explosion;
     public ViewEnemies ve;
     private void OnTriggerEnter(Collider other)
@@ -21,7 +21,7 @@ public class PlaneManager : MonoBehaviour
             iterationCount++;
             GameObject spawner = prefabstobespawned;
            var op= Instantiate(spawner, spawnpoint.transform.position, Quaternion.identity);
-            CurrentNum.EnemyDead = false;
+            CurrentNum.EnemyDeadCount = 0;
             EnemiesShow enemies = op.transform.GetChild(2).GetComponent<EnemiesShow>();
             int max = 0;
             GameObject[] ino = new GameObject[2];
@@ -55,7 +55,7 @@ public class PlaneManager : MonoBehaviour
 
             enemies.PlaceEnemy(max);
 
-            Debug.Log("pinky " + max);
+        
             Destroy(other.gameObject);
             GameObject[] innerWalls = GameObject.FindGameObjectsWithTag("InnerWall");
             if (iterationCount < OperatorList.operatorList.Count)
@@ -92,7 +92,7 @@ public class PlaneManager : MonoBehaviour
             }
             else
             {
-                changer.PlayerWin(op);
+               /* changer.PlayerWin(op);*/
            /*     op.GetComponentInChildren<StartFire>().enableRun();*/
             }
 

@@ -4,11 +4,25 @@ using UnityEngine;
 
 public class JoystickRotate : MonoBehaviour
 {
-    public FixedJoystick _joystick;
+
+    private FixedJoystick _joystick;
     public float _rotateSpeed;
+    public ViewEnemies ve;
+    private Swipe sw; 
+
+    private void Start()
+    {
+        _joystick = GameObject.FindGameObjectWithTag("Joystick").transform.GetChild(0).gameObject.GetComponent<FixedJoystick>();
+        sw = GameObject.FindGameObjectWithTag("GameController").GetComponent<Swipe>();
+    }
+
     private void Update()
     {
-        RotateWithJoystick();
+        if (CurrentNum.enemies.Count != CurrentNum.EnemyDeadCount)
+        {
+            RotateWithJoystick();
+        }
+      
     }
 
     private void RotateWithJoystick()
@@ -18,6 +32,10 @@ public class JoystickRotate : MonoBehaviour
         {
             Quaternion rotation = Quaternion.LookRotation(moveVector);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, _rotateSpeed * Time.deltaTime);
+        }
+        else
+        {
+            sw.localView();
         }
     }
 }

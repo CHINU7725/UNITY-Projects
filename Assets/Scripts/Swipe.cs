@@ -67,6 +67,105 @@ public class Swipe : MonoBehaviour
         }
 
 
+        if (CurrentNum.enemies.Count != CurrentNum.EnemyDeadCount)
+        {
+            halfScreenInput();
+        }
+        else
+        {
+            fullScreenInput();
+        }
+
+
+
+
+            currentIndex = targetIndex;
+
+        var stop = movementSpeed * Time.deltaTime;
+
+        rb.gameObject.transform.position = Vector3.MoveTowards(rb.gameObject.transform.position, lanePs[currentIndex], stop);
+        /* Camera.main.transform.position = Vector3.MoveTowards(Camera.main.transform.position, new Vector3(lanePs[currentIndex].x, Camera.main.transform.position.y, Camera.main.transform.position.z), stop);*/
+
+
+        /*        // Calculate the target rotation
+                Quaternion targetRotation = Quaternion.LookRotation(target.position - rb.gameObject.transform.position, Vector3.up);
+
+                // Apply smooth rotation towards the target
+                rb.gameObject.transform.rotation = Quaternion.Slerp(rb.gameObject.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);*/
+
+
+        if (CurrentNum.enemies.Count!=CurrentNum.EnemyDeadCount)
+        {
+            ve.LookEach();
+        }
+        else
+        {
+
+            localView();
+
+        }
+    }
+    public void localView()
+    {
+        List<Transform> playerTransforms = ve.GetValidChildTransforms(rb.gameObject, "Pos");
+
+        for (int i = 0; i < playerTransforms.Count; i++)
+        {
+            Transform playerChild = ve.GetValidChild(playerTransforms[i]);
+            Quaternion targetRotation = Quaternion.LookRotation(target.position - playerChild.position, Vector3.up);
+
+            // Apply smooth rotation towards the target
+            playerChild.rotation = Quaternion.Slerp(playerChild.rotation, targetRotation, 7f * Time.deltaTime);
+
+        }
+
+    }
+
+
+    private void halfScreenInput()
+    {
+            // Input handling logic for half-screen swipe controls
+            if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+            {
+                startTouch = Input.GetTouch(0).position;
+            }
+
+            if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
+            {
+                endTouch = Input.GetTouch(0).position;
+
+                // Get the half width of the screen
+                float halfScreenWidth = Screen.width / 2f;
+
+                // Check if the swipe occurred on the left half of the screen
+                if (startTouch.x < halfScreenWidth && endTouch.x < halfScreenWidth)
+                {
+                    // Swipe occurred on the left half of the screen
+                    if (endTouch.x > startTouch.x)
+                    {
+                        if (currentIndex != 0)
+                        {
+                            target = rightLook;
+                            targetIndex = currentIndex - 1;
+                            HapticFeedback.MediumFeedback();
+                        }
+                    }
+                    else if (endTouch.x < startTouch.x)
+                    {
+                        if (currentIndex != 1)
+                        {
+                            target = leftLook;
+                            targetIndex = currentIndex + 1;
+                            HapticFeedback.MediumFeedback();
+                        }
+                    }
+                }
+            }
+        
+    }
+
+    private void fullScreenInput()
+    {
 
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
@@ -96,44 +195,6 @@ public class Swipe : MonoBehaviour
                     HapticFeedback.MediumFeedback();
                 }
             }
-        }
-
-        currentIndex = targetIndex;
-
-        var stop = movementSpeed * Time.deltaTime;
-
-        rb.gameObject.transform.position = Vector3.MoveTowards(rb.gameObject.transform.position, lanePs[currentIndex], stop);
-        /* Camera.main.transform.position = Vector3.MoveTowards(Camera.main.transform.position, new Vector3(lanePs[currentIndex].x, Camera.main.transform.position.y, Camera.main.transform.position.z), stop);*/
-
-
-        /*        // Calculate the target rotation
-                Quaternion targetRotation = Quaternion.LookRotation(target.position - rb.gameObject.transform.position, Vector3.up);
-
-                // Apply smooth rotation towards the target
-                rb.gameObject.transform.rotation = Quaternion.Slerp(rb.gameObject.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);*/
-
-
-        if (!CurrentNum.EnemyDead)
-        {
-            ve.LookEach();
-        }
-        else
-        {
-
-            List<Transform> playerTransforms = ve.GetValidChildTransforms(rb.gameObject, "Pos");
-
-            for (int i = 0; i < playerTransforms.Count; i++)
-            {
-                Transform playerChild = ve.GetValidChild(playerTransforms[i]);
-
-                Quaternion targetRotation = Quaternion.LookRotation(target.position - playerChild.position, Vector3.up);
-
-                // Apply smooth rotation towards the target
-                playerChild.rotation = Quaternion.Slerp(playerChild.rotation, targetRotation, 7f * Time.deltaTime);
-
-            }
-
-
         }
     }
 

@@ -10,11 +10,16 @@ public class CurrentNum : MonoBehaviour
 
     public static int EnemiesCount=0;
 
-    public static bool EnemyDead=true;
+    public static int EnemyDeadCount=0;
 
     public static Vector3 enemyPosition=Vector3.up;
 
-    public static Dictionary<GameObject,GameObject> LookCouple=new Dictionary<GameObject, GameObject>();
+    public static Dictionary<GameObject, GameObject> LookCouple = new Dictionary<GameObject, GameObject>();
+
+
+
+    public static List<GameObject> players=new List<GameObject>();
+    public static List<GameObject> enemies= new List<GameObject>();
     
 
     public static void reset()
@@ -22,7 +27,9 @@ public class CurrentNum : MonoBehaviour
         characterNum = 1;
         PrevNum = 1 ;
         EnemiesCount = 0;
-        EnemyDead = true; ;
+        EnemyDeadCount =0 ;
+        players.Clear();
+        enemies.Clear();
     }
 
 

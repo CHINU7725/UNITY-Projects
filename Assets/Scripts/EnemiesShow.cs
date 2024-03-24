@@ -47,30 +47,36 @@ public class EnemiesShow : MonoBehaviour
         }
 
         int currentPosition = 0;
+        GameObject op;
         for (int i = 0; i < normalCharacterCount; i++)
         {
  
-            var op=Instantiate(Normalenemy, characterPos[currentPosition].position, Quaternion.identity, characterPos[currentPosition]);
+            op=Instantiate(Normalenemy, characterPos[currentPosition].position, Quaternion.identity, characterPos[currentPosition]);
+            op.layer = 7;
             currentPosition = (currentPosition + 1) % characterPos.Length;
         }
 
         for (int i = 0; i < superCharacterCount; i++)
         {
-            Instantiate(SuperEnemy, characterPos[currentPosition].position, Quaternion.identity, characterPos[currentPosition]);
+            op=Instantiate(SuperEnemy, characterPos[currentPosition].position, Quaternion.identity, characterPos[currentPosition]);
+            op.layer = 7;
             currentPosition = (currentPosition + 1) % characterPos.Length;
         }
 
         for (int i = 0; i < ultraCharacterCount; i++)
         {
-            Instantiate(SuperUltraEnemy, characterPos[currentPosition].position, Quaternion.identity, characterPos[currentPosition]);
+           op= Instantiate(SuperUltraEnemy, characterPos[currentPosition].position, Quaternion.identity, characterPos[currentPosition]);
+            op.layer = 7;
             currentPosition = (currentPosition + 1) % characterPos.Length;
         }
 
         for (int i = 0; i < proMaxCharacterCount; i++)
         {
-            Instantiate(ProMaxEnemy, characterPos[currentPosition].position, Quaternion.identity, characterPos[currentPosition]);
+            op = Instantiate(ProMaxEnemy, characterPos[currentPosition].position, Quaternion.identity, characterPos[currentPosition]);
+            op.layer = 7;
             currentPosition = (currentPosition + 1) % characterPos.Length;
         }
+
 
         this.gameObject.transform.rotation=Quaternion.Euler(0, 0, 0);
         CurrentNum.PrevNum = CurrentNum.characterNum;

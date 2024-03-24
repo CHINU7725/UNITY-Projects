@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Cinemachine;
+using JetBrains.Annotations;
 
 public class StartFire : MonoBehaviour
 {
@@ -12,54 +13,38 @@ public class StartFire : MonoBehaviour
     private GameObject joystickCanvas;
     List<Transform> playerTransforms = new List<Transform>();
     private Coroutine shootingCoroutine;
+    bool flag;
+
 
     private void Start()
     {
+        flag = true;
         primaryCamera = GameObject.FindGameObjectWithTag("Camera");
-        joystickCanvas = GameObject.FindGameObjectWithTag("Joystick");
+        joystickCanvas = GameObject.FindGameObjectWithTag("Joystick").transform.GetChild(0).gameObject;
+        
+    }
+    private void Update()
+    {
+        if (CurrentNum.enemies.Count == CurrentNum.EnemyDeadCount && flag)
+        {
+            enableRun();
+            flag = false;
+
+        }
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag=="Player")
         {
-            disableRun();
             playerTransforms = GetValidChildTransforms(other.gameObject, "Pos");
+            disableRun();
 
-            if (shootingCoroutine != null)
-                StopCoroutine(shootingCoroutine);
-
-            shootingCoroutine = StartCoroutine(ShootForDuration());
-
-            if(CurrentNum.characterNum<CurrentNum.EnemiesCount)
-            {
-                audio.Stop();
-            }
+            flag = true ;
+            
         }
         //enableRun();
     }
 
-    IEnumerator ShootForDuration()
-    {
-        float timer = 0f;
-        float duration = 4f;
-        audio.Play();// Duration to shoot for in seconds
-
-        while (timer < duration)
-        {
-            for (int i = 0; i < playerTransforms.Count; i++)
-            {
-                Transform playerChild = GetValidChild(playerTransforms[i]);
-                playerChild.GetComponent<PlayerGunSelector>().Shoot(CurrentNum.LookCouple[playerChild.gameObject]);
-            }
-
-            // Wait for the next frame
-            yield return null;
-            timer += Time.deltaTime;
-        }
-        audio.Stop();
-        // Coroutine finished, reset the shooting coroutine reference
-        shootingCoroutine = null;
-    }
 
     public List<Transform> GetValidChildTransforms(GameObject parent, string nameStartsWith)
     {
@@ -92,6 +77,7 @@ public class StartFire : MonoBehaviour
         joystickCanvas.SetActive(true);
         foreach (Transform t in playerTransforms)
         {
+        
             t.GetChild(0).gameObject.GetComponent<Animator>().SetBool("Idle", true);
         }
 
@@ -108,13 +94,24 @@ public class StartFire : MonoBehaviour
 
     public void enableRun()
     {
+
+
+        StartCoroutine(delayAnimation());
+    }
+
+
+
+    IEnumerator delayAnimation()
+    {
+        yield return new WaitForSeconds(1f);
         primaryCamera.SetActive(true);
         joystickCanvas.SetActive(false);
+
         foreach (Transform t in playerTransforms)
         {
+
             t.GetChild(0).gameObject.GetComponent<Animator>().SetBool("Idle", false);
         }
-
         GameObject[] objectsToEnable = GameObject.FindGameObjectsWithTag("Bridge");
         this.GetComponentInParent<Plane>().enabled = true;
 

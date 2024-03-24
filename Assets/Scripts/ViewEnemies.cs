@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using static Cinemachine.CinemachineTargetGroup;
 using static UnityEngine.GraphicsBuffer;
 
 public class ViewEnemies : MonoBehaviour
@@ -14,7 +15,7 @@ public class ViewEnemies : MonoBehaviour
 
 
 
-    public void LookEach()
+        public void LookEach()
     {
         if (GameObject.FindGameObjectWithTag("Enemies") == null)
             return;
@@ -29,7 +30,7 @@ public class ViewEnemies : MonoBehaviour
 
 
 
-        Debug.Log(playerTransforms.Count + "dnhjdfh" + enemyTransforms.Count);
+        
 
         // Ensure arrays have the same length
         if (playerTransforms.Count != enemyTransforms.Count)
@@ -44,7 +45,7 @@ public class ViewEnemies : MonoBehaviour
             Transform playerChild = GetValidChild(playerTransforms[i]);
             Transform enemyChild = GetValidChild(enemyTransforms[i]);
 
-            RotateTowards(playerChild, enemyChild);
+
             RotateTowards(enemyChild, playerChild);
 
 
@@ -58,7 +59,7 @@ public class ViewEnemies : MonoBehaviour
 
 
 
-       GameObject playersParent = GameObject.FindGameObjectWithTag("Player");
+        GameObject playersParent = GameObject.FindGameObjectWithTag("Player");
 
 
         CurrentNum.enemyPosition = enemies.transform.position;
@@ -68,9 +69,10 @@ public class ViewEnemies : MonoBehaviour
 
 
 
-        Debug.Log(playerTransforms.Count + "dnhjdfh" + enemyTransforms.Count);
         CurrentNum.LookCouple.Clear();
-        Debug.LogError(CurrentNum.LookCouple.ToArray());
+        CurrentNum.enemies.Clear();
+        CurrentNum.players.Clear();
+
         // Ensure arrays have the same length
         if (playerTransforms.Count != enemyTransforms.Count)
         {
@@ -84,10 +86,10 @@ public class ViewEnemies : MonoBehaviour
             Transform playerChild = GetValidChild(playerTransforms[i]);
             Transform enemyChild = GetValidChild(enemyTransforms[i]);
 
-        
-        CurrentNum.LookCouple.Add(playerChild.gameObject, enemyChild.gameObject);
+            CurrentNum.enemies.Add(enemyChild.gameObject);
+            CurrentNum.players.Add(playerChild.gameObject);
 
-            Debug.Log(CurrentNum.LookCouple);
+            CurrentNum.LookCouple.Add(playerChild.gameObject, enemyChild.gameObject);
 
 
         }
@@ -116,7 +118,7 @@ public class ViewEnemies : MonoBehaviour
             return null;
     }
 
-    void RotateTowards(Transform target, Transform lookAt)
+   public void RotateTowards(Transform target, Transform lookAt)
     {
         if (target == null || lookAt == null)
             return;

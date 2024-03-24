@@ -1,13 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 using UnityEngine.Pool;
-using UnityEngine.Rendering.Universal;
+
 
 
 public class PlayerGunSelector : MonoBehaviour
 {
     [SerializeField] private GunType Gun;
+
+
+    [SerializeField] private ParticleSystem bloodEffect;
     /*    [SerializeField] private Transform GunParent;*/
     public ShootConfiguationScriptableObjects ShootConfig;
     public TrailConfigScriptableObjects TrailConfig;
@@ -17,6 +21,9 @@ public class PlayerGunSelector : MonoBehaviour
     private float LastShootTime;
     private ParticleSystem ShootSystem;
     private ObjectPool<TrailRenderer> TrailPool;
+
+    Vector3 shootDirection;
+
 
     public GameObject gune;
     public void Start()
@@ -31,36 +38,36 @@ public class PlayerGunSelector : MonoBehaviour
 
     }
 
-    public void Shoot(GameObject target)
+    private void Update()
+    {
+        shootDirection = ShootSystem.transform.forward;
+
+        Debug.DrawRay(ShootSystem.transform.position, shootDirection * 120f, Color.red);
+    }
+    public void Shoot()
     {
   
         if (Time.time > ShootConfig.fireRate + LastShootTime)
         {
             LastShootTime = Time.time;
-            Debug.Log("Raghav");
+          
 
             ShootSystem.Play();
-
-            Vector3 shootDirection;
-
-            if (CurrentNum.enemyPosition!=Vector3.up)
-            {
-                // Calculate the direction towards the target
-                shootDirection = (new Vector3(target.transform.position.x, target.transform.position.y+2f, target.transform.position.z) - ShootSystem.transform.position).normalized;
-            }
-            else
-            {
+    
                 // If no target is provided, shoot in the forward direction of the ShootSystem
-                shootDirection = -ShootSystem.transform.forward;
-            }
-
-            if (Physics.Raycast(ShootSystem.transform.position, shootDirection, out RaycastHit hit, float.MaxValue, ShootConfig.HitMask))
+           
+          
+        
+        if (Physics.Raycast(ShootSystem.transform.position, shootDirection, out RaycastHit hit, float.MaxValue, ShootConfig.HitMask))
             {
+                Debug.Log("pop");
                 StartCoroutine(PlayTrail(ShootSystem.transform.position, hit.point, hit));
             }
             else
             {
-                StartCoroutine(PlayTrail(ShootSystem.transform.position, ShootSystem.transform.position + (shootDirection * TrailConfig.MissDistance), new RaycastHit()));
+                Debug.Log("plpl");
+                RaycastHit Hit = new RaycastHit();
+                StartCoroutine(PlayTrail(ShootSystem.transform.position, ShootSystem.transform.position + (shootDirection * TrailConfig.MissDistance), Hit));
             }
         }
     }
@@ -73,6 +80,11 @@ public class PlayerGunSelector : MonoBehaviour
         yield return null; // avoid position carry-over from last frame if reused
 
         instance.emitting = true;
+        ParticleSystem op=new ParticleSystem();
+        if(Hit.collider!=null)
+        {
+           op= Instantiate(bloodEffect, Hit.point, Quaternion.LookRotation(Hit.normal));
+        }
 
         float distance = Vector3.Distance(StartPoint, EndPoint);
         float remainingDistance = distance;
@@ -87,16 +99,32 @@ public class PlayerGunSelector : MonoBehaviour
 
             yield return null;
         }
+
         instance.transform.position = EndPoint;
+
+     /*   if (Hit != null)
+        {
+            SurfaceManager
+        }*/
+
         yield return new WaitForSeconds(TrailConfig.Duration);
         yield return null;
         instance.emitting = false;
         instance.gameObject.SetActive(false);
+        Destroy(op);
         TrailPool.Release(instance);
     }
     private TrailRenderer CreateTrail()
     {
         GameObject instance = new GameObject("Bullet Trail");
+        instance.tag = "Bullet";
+        instance.layer = 6;
+        BoxCollider boxCollider;
+        boxCollider = instance.AddComponent<BoxCollider>();
+        Rigidbody rigidbody = instance.AddComponent<Rigidbody>();
+        rigidbody.useGravity=false;
+        boxCollider.size = new Vector3(0.1f, 0.1f, 0.1f);
+
         TrailRenderer trail = instance.AddComponent<TrailRenderer>();
         trail.colorGradient = TrailConfig.Color;
         trail.material = TrailConfig.Material;

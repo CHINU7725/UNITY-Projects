@@ -15,9 +15,9 @@ public class GameManager : MonoBehaviour
     public GameObject Supercharacter;
     public GameObject SuperUltracharacter;
     public GameObject ProMaxCharacter;
- /*   public TextMeshProUGUI playerCount;*/
+    /*   public TextMeshProUGUI playerCount;*/
 
-
+ 
 
     public void UpdateCharacters(int totalCount)
     {
@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogWarning("Total number of characters cannot exceed 16.");
         }
-        Debug.Log(totalCount);
+ 
         // Clear existing characters
         for (int i = 0; i < characterPos.Length; i++)
         {

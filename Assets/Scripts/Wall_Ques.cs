@@ -43,7 +43,7 @@ public class Wall_Ques : MonoBehaviour
         }
         else
         {
-            Debug.LogError("TextMeshProUGUI element reference not set in the inspector!");
+          
         }
         if (randomOperator == 'X' ? CurrentNum.characterNum * n >= 1000 : randomOperator == '+' ? CurrentNum.characterNum+n >= 1000 : false)
         {
@@ -89,7 +89,7 @@ public class Wall_Ques : MonoBehaviour
         }
         else
         {
-            Debug.LogError("TextMeshProUGUI element reference not set in the inspector!");
+          
         }
         if (randomOperator == '/' ? CurrentNum.characterNum / n < 1 : randomOperator == '-' ? CurrentNum.characterNum - n < 1 : false)
         {
@@ -112,7 +112,7 @@ public class Wall_Ques : MonoBehaviour
         }
         else
         {
-            Debug.LogError("TextMeshProUGUI element reference not set in the inspector!");
+          
         }
     }
 
