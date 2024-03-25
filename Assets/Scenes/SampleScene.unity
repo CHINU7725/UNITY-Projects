@@ -1245,7 +1245,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -2484,17 +2484,17 @@ PrefabInstance:
     - target: {fileID: 2431672356192716042, guid: c1300cce3d2adae43925d5d681bb4782,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.11703085
+      value: 0.11703084
       objectReference: {fileID: 0}
     - target: {fileID: 2431672356192716042, guid: c1300cce3d2adae43925d5d681bb4782,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000017088139
+      value: 0.000000017088151
       objectReference: {fileID: 0}
     - target: {fileID: 2431672356192716042, guid: c1300cce3d2adae43925d5d681bb4782,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000020136768
+      value: -0.000000002013678
       objectReference: {fileID: 0}
     - target: {fileID: 2431672356192716042, guid: c1300cce3d2adae43925d5d681bb4782,
         type: 3}
