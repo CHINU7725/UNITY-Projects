@@ -40,6 +40,7 @@ public class HealthSystem : MonoBehaviour
     public void dead()
     {
         animator.SetTrigger("Dead");
+
         CurrentNum.EnemyDeadCount++;
     }
 
@@ -52,6 +53,8 @@ public class HealthSystem : MonoBehaviour
             HealthBar.SetProgress(Health / MaxHealth,3);
             if (this.Health < 0)
             {
+                this.GetComponent<ZombieAttack>().enabled = false;
+                this.GetComponent<CapsuleCollider>().enabled=false;
                 dead();
                 isDead = true;
 

@@ -14,7 +14,7 @@ public class CurrentNum : MonoBehaviour
 
     public static Vector3 enemyPosition=Vector3.up;
 
-    public static Dictionary<GameObject, GameObject> LookCouple = new Dictionary<GameObject, GameObject>();
+
 
 
 

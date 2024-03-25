@@ -53,8 +53,8 @@ public class PlaneManager : MonoBehaviour
                 {
                     max = futureNUmber;
                 }
-                int x = CurrentNum.characterNum / 2;
-                max = Random.Range(CurrentNum.characterNum, CurrentNum.characterNum + x);
+                int x =max/ 2;
+                max = Random.Range(max,max + x);
             }
             
             enemies.PlaceEnemy(max);

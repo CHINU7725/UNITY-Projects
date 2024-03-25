@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static Cinemachine.CinemachineTargetGroup;
 using static UnityEngine.GraphicsBuffer;
 
@@ -30,7 +31,7 @@ public class ViewEnemies : MonoBehaviour
 
 
 
-        
+
 
         // Ensure arrays have the same length
         /*if (playerTransforms.Count != enemyTransforms.Count)
@@ -39,12 +40,22 @@ public class ViewEnemies : MonoBehaviour
             return;
         }*/
 
-        // Rotate players and enemies to face each other
-        for (int i = 0; i < playerTransforms.Count; i++)
-        {
-            Transform playerChild = GetValidChild(playerTransforms[i]);
-            Transform enemyChild = GetValidChild(enemyTransforms[i]);
+        int playerCount = playerTransforms.Count;
+        int enemyCount = enemyTransforms.Count;
 
+        if (playerCount <= 0)
+        {
+
+            Debug.Log("You Lost");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            CurrentNum.reset();
+        }
+
+        for (int i = 0; i < enemyCount; i++)
+        {
+            
+            Transform playerChild = GetValidChild(playerTransforms[i % playerCount]); // Access player transforms cyclically
+            Transform enemyChild = GetValidChild(enemyTransforms[i]);
 
             RotateTowards(enemyChild, playerChild);
         }
@@ -65,8 +76,6 @@ public class ViewEnemies : MonoBehaviour
         enemyTransforms = GetValidChildTransforms(enemies, "Pos");
 
 
-
-        CurrentNum.LookCouple.Clear();
         CurrentNum.enemies.Clear();
         CurrentNum.players.Clear();
 
@@ -76,16 +85,20 @@ public class ViewEnemies : MonoBehaviour
             Debug.LogError("Players and enemies arrays must have the same length!");
             return;
         }*/
-
-        // Rotate players and enemies to face each other
         for (int i = 0; i < playerTransforms.Count; i++)
         {
             Transform playerChild = GetValidChild(playerTransforms[i]);
+            CurrentNum.players.Add(playerChild.gameObject);
+        }
+
+            // Rotate players and enemies to face each other
+            for (int i = 0; i < enemyTransforms.Count; i++)
+        {
+     
             Transform enemyChild = GetValidChild(enemyTransforms[i]);
 
             CurrentNum.enemies.Add(enemyChild.gameObject);
-            CurrentNum.players.Add(playerChild.gameObject);
-            CurrentNum.LookCouple.Add(playerChild.gameObject, enemyChild.gameObject);
+           
 
 
         }
