@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using CandyCoded.HapticFeedback;
+using Unity.VisualScripting;
+using System.Linq;
 
 public class PlaneManager : MonoBehaviour
 {
@@ -51,11 +53,14 @@ public class PlaneManager : MonoBehaviour
                 {
                     max = futureNUmber;
                 }
+                int x = CurrentNum.characterNum / 2;
+                max = Random.Range(CurrentNum.characterNum, CurrentNum.characterNum + x);
             }
-
+            
             enemies.PlaceEnemy(max);
+            CurrentNum.EnemiesCount = max;
 
-        
+
             Destroy(other.gameObject);
             GameObject[] innerWalls = GameObject.FindGameObjectsWithTag("InnerWall");
             if (iterationCount < OperatorList.operatorList.Count)
@@ -86,15 +91,15 @@ public class PlaneManager : MonoBehaviour
 
             }
 
-            if (CurrentNum.EnemiesCount > CurrentNum.characterNum)
+            /*if (CurrentNum.EnemiesCount > CurrentNum.characterNum)
             {
                 StartCoroutine(ExplosionShow());
             }
             else
             {
-               /* changer.PlayerWin(op);*/
-           /*     op.GetComponentInChildren<StartFire>().enableRun();*/
-            }
+               *//* changer.PlayerWin(op);*/
+           /*     op.GetComponentInChildren<StartFire>().enableRun();*//*
+            }*/
 
 
             ve.AddPlayer(op.transform.GetChild(2).gameObject);

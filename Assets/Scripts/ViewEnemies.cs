@@ -33,11 +33,11 @@ public class ViewEnemies : MonoBehaviour
         
 
         // Ensure arrays have the same length
-        if (playerTransforms.Count != enemyTransforms.Count)
+        /*if (playerTransforms.Count != enemyTransforms.Count)
         {
             Debug.LogError("Players and enemies arrays must have the same length!");
             return;
-        }
+        }*/
 
         // Rotate players and enemies to face each other
         for (int i = 0; i < playerTransforms.Count; i++)
@@ -47,9 +47,6 @@ public class ViewEnemies : MonoBehaviour
 
 
             RotateTowards(enemyChild, playerChild);
-
-
-
         }
     }
 
@@ -74,11 +71,11 @@ public class ViewEnemies : MonoBehaviour
         CurrentNum.players.Clear();
 
         // Ensure arrays have the same length
-        if (playerTransforms.Count != enemyTransforms.Count)
+        /*if (playerTransforms.Count != enemyTransforms.Count)
         {
             Debug.LogError("Players and enemies arrays must have the same length!");
             return;
-        }
+        }*/
 
         // Rotate players and enemies to face each other
         for (int i = 0; i < playerTransforms.Count; i++)
@@ -88,7 +85,6 @@ public class ViewEnemies : MonoBehaviour
 
             CurrentNum.enemies.Add(enemyChild.gameObject);
             CurrentNum.players.Add(playerChild.gameObject);
-
             CurrentNum.LookCouple.Add(playerChild.gameObject, enemyChild.gameObject);
 
 
