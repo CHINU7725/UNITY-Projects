@@ -19,10 +19,6 @@ public class ZombieAttack : MonoBehaviour
             if (!isAttacking && hit.collider.gameObject != null && hit.collider.gameObject.CompareTag("Heroes"))
             {
                 anim.SetBool("Attack", true);
-
-
-
-
                 StartCoroutine(delayDead(hit));
 
 
@@ -34,11 +30,11 @@ public class ZombieAttack : MonoBehaviour
     {
         isAttacking = true; // Set the flag to indicate that the zombie is attacking
 
-        yield return new WaitForSeconds(3f);
-        hit.collider.gameObject.GetComponent<Animator>().SetBool("DeadBool", true);
+        yield return new WaitForSeconds(4f);
+        hit.collider.gameObject.GetComponent<Animator>().SetTrigger("Dead");
         yield return new WaitForSeconds(3f);
         CurrentNum.characterNum--;
-        /*      CurrentNum.players.Remove(hit.collider.gameObject);*/
+        CurrentNum.players.Remove(hit.collider.gameObject);
         Destroy(hit.collider.gameObject);
         anim.SetBool("Attack", false);
 
