@@ -58,6 +58,7 @@ public class HealthSystem : MonoBehaviour
             }
 
         }
+      
     }
     private void SetupHealthBar(Canvas Canvas, Camera Camera)
     {

@@ -14,6 +14,7 @@ TagManager:
   - Camera
   - Joystick
   - Bullet
+  - Heroes
   layers:
   - Default
   - TransparentFX
