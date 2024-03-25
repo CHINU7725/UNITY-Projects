@@ -47,7 +47,7 @@ public class ViewEnemies : MonoBehaviour
         {
 
             Debug.Log("You Lost");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene("Start");
             CurrentNum.reset();
         }
 
