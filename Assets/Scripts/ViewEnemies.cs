@@ -53,7 +53,8 @@ public class ViewEnemies : MonoBehaviour
 
         for (int i = 0; i < enemyCount; i++)
         {
-            
+            if (playerCount == 0)
+                break;
             Transform playerChild = GetValidChild(playerTransforms[i % playerCount]); // Access player transforms cyclically
             Transform enemyChild = GetValidChild(enemyTransforms[i]);
 

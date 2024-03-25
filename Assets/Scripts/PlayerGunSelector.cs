@@ -24,6 +24,7 @@ public class PlayerGunSelector : MonoBehaviour
 
     Vector3 shootDirection;
 
+    public AudioSource asso;
 
     public GameObject gune;
     public void Start()
@@ -53,6 +54,7 @@ public class PlayerGunSelector : MonoBehaviour
           
 
             ShootSystem.Play();
+            asso.Play();
     
                 // If no target is provided, shoot in the forward direction of the ShootSystem
            
@@ -111,6 +113,7 @@ public class PlayerGunSelector : MonoBehaviour
         yield return null;
         instance.emitting = false;
         instance.gameObject.SetActive(false);
+        asso.Stop();
         Destroy(op);
         TrailPool.Release(instance);
     }

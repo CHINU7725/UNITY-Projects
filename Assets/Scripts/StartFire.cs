@@ -37,7 +37,7 @@ public class StartFire : MonoBehaviour
         if (other.gameObject.tag=="Player")
         {
             playerTransforms = GetValidChildTransforms(other.gameObject, "Pos");
-            disableRun();
+           StartCoroutine(disableRun());
 
             flag = true ;
             
@@ -71,10 +71,12 @@ public class StartFire : MonoBehaviour
 
 
 
-    public void disableRun()
+    public IEnumerator disableRun()
     {
         primaryCamera.SetActive(false);
+        yield return new WaitForSeconds(1.5f);
         joystickCanvas.SetActive(true);
+
         foreach (Transform t in playerTransforms)
         {
         
@@ -103,15 +105,17 @@ public class StartFire : MonoBehaviour
 
     IEnumerator delayAnimation()
     {
-        yield return new WaitForSeconds(1f);
+               
         primaryCamera.SetActive(true);
-        joystickCanvas.SetActive(false);
 
+        yield return new WaitForSeconds(1.5f);
+        joystickCanvas.SetActive(false);
         foreach (Transform t in playerTransforms)
         {
 
             t.GetChild(0).gameObject.GetComponent<Animator>().SetBool("Idle", false);
         }
+
         GameObject[] objectsToEnable = GameObject.FindGameObjectsWithTag("Bridge");
         this.GetComponentInParent<Plane>().enabled = true;
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.AI;
+using CandyCoded.HapticFeedback;
 
 public class HealthSystem : MonoBehaviour
 {
@@ -49,15 +50,16 @@ public class HealthSystem : MonoBehaviour
 
         if (collision.gameObject.tag == "Bullet" && !isDead)
         {
+            HapticFeedback.MediumFeedback();
             this.Health--;
             HealthBar.SetProgress(Health / MaxHealth,3);
             if (this.Health < 0)
             {
-                this.GetComponent<ZombieAttack>().enabled = false;
-                this.GetComponent<CapsuleCollider>().enabled=false;
+
                 dead();
                 isDead = true;
-
+                this.GetComponent<ZombieAttack>().enabled = false;
+                this.GetComponent<CapsuleCollider>().enabled = false;
             }
 
         }

@@ -11,7 +11,7 @@ public class Swipe : MonoBehaviour
 
     public GameObject LeftLane;
     public GameObject RightLane;
-
+   
     Vector3[] lanePs;
 
     int currentIndex = 0;
@@ -28,6 +28,9 @@ public class Swipe : MonoBehaviour
     public float movementSpeed=12f;
     public float rotationSpeed=10f;
 
+    List<Transform> playerTransforms=new List<Transform>();
+
+    public GameObject JoystickCanva;
 
     public ViewEnemies ve;
 
@@ -67,7 +70,7 @@ public class Swipe : MonoBehaviour
         }
 
 
-        if (CurrentNum.enemies.Count != CurrentNum.EnemyDeadCount)
+        if (CurrentNum.enemies.Count != CurrentNum.EnemyDeadCount && JoystickCanva.activeSelf)
         {
             halfScreenInput();
         }
@@ -107,7 +110,7 @@ public class Swipe : MonoBehaviour
     }
     public void localView()
     {
-        List<Transform> playerTransforms = ve.GetValidChildTransforms(rb.gameObject, "Pos");
+        playerTransforms = ve.GetValidChildTransforms(rb.gameObject, "Pos");
 
         for (int i = 0; i < playerTransforms.Count; i++)
         {
@@ -145,7 +148,15 @@ public class Swipe : MonoBehaviour
                     {
                         if (currentIndex != 0)
                         {
-                            target = rightLook;
+                        playerTransforms = ve.GetValidChildTransforms(rb.gameObject, "Pos");
+
+                        for (int i = 0; i < playerTransforms.Count; i++)
+                        {
+                            Debug.Log("lppl");
+                            Transform playerChild = ve.GetValidChild(playerTransforms[i]);
+                            playerChild.GetComponent<Animator>().SetTrigger("Right");
+                        }
+                        target = rightLook;
                             targetIndex = currentIndex - 1;
                             HapticFeedback.MediumFeedback();
                         }
@@ -154,7 +165,14 @@ public class Swipe : MonoBehaviour
                     {
                         if (currentIndex != 1)
                         {
-                            target = leftLook;
+                        playerTransforms = ve.GetValidChildTransforms(rb.gameObject, "Pos");
+
+                        for (int i = 0; i < playerTransforms.Count; i++)
+                        {
+                            Transform playerChild = ve.GetValidChild(playerTransforms[i]);
+                            playerChild.GetComponent<Animator>().SetTrigger("Left");
+                        }
+                        target = leftLook;
                             targetIndex = currentIndex + 1;
                             HapticFeedback.MediumFeedback();
                         }
@@ -167,29 +185,31 @@ public class Swipe : MonoBehaviour
     private void fullScreenInput()
     {
 
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && !JoystickCanva.activeSelf)
         {
             startTouch = Input.GetTouch(0).position;
         }
 
 
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended && !JoystickCanva.activeSelf)
         {
             endTouch = Input.GetTouch(0).position;
 
-            if (endTouch.x > startTouch.x)
+            if (endTouch.x > startTouch.x && !JoystickCanva.activeSelf)
             {
                 if (currentIndex != 0)
                 {
-                    target = rightLook;
+                   
+                        target = rightLook;
                     targetIndex = currentIndex - 1;
                     HapticFeedback.MediumFeedback();
                 }
             }
-            else if (endTouch.x < startTouch.x)
+            else if (endTouch.x < startTouch.x && !JoystickCanva.activeSelf)
             {
                 if (currentIndex != 1)
                 {
+                    
                     target = leftLook;
                     targetIndex = currentIndex + 1;
                     HapticFeedback.MediumFeedback();

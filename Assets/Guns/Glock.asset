@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 0
   Name: Glock
-  ModelPrefab: {fileID: 4515231971002843113, guid: 6fb0c66376ff1a1418cfb7a757157ff9,
+  ModelPrefab: {fileID: 7467659248167653699, guid: 01835a1058271fa4ebbfc833b50497e4,
     type: 3}
   SpawnPoint: {x: 0.135, y: 0.071, z: 0.001}
   SpawnRotation: {x: -2, y: 114.35, z: -151}

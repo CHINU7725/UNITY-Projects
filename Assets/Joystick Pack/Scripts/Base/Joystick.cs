@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using CandyCoded.HapticFeedback;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -67,9 +68,11 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
         if (isButtonPressed)
         {
             shootAll();
+            HapticFeedback.LightFeedback();
         }
         if(CurrentNum.enemies.Count == CurrentNum.EnemyDeadCount)
         {
+            Debug.Log("lppl");
             input = Vector2.zero;
             isButtonPressed = false;
             handle.anchoredPosition = Vector2.zero;
