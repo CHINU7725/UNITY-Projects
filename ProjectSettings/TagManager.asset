@@ -15,6 +15,8 @@ TagManager:
   - Joystick
   - Bullet
   - Heroes
+  - Bazooka
+  - BakoozaBullet
   layers:
   - Default
   - TransparentFX
@@ -24,7 +26,7 @@ TagManager:
   - UI
   - Bullet
   - Enemy
-  - 
+  - Heroes
   - 
   - 
   - 

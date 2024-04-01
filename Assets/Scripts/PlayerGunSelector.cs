@@ -12,12 +12,9 @@ public class PlayerGunSelector : MonoBehaviour
 
 
     [SerializeField] private ParticleSystem bloodEffect;
-    /*    [SerializeField] private Transform GunParent;*/
     public ShootConfiguationScriptableObjects ShootConfig;
     public TrailConfigScriptableObjects TrailConfig;
 
-    private MonoBehaviour ActiveMonoBehaviour;
-    private GameObject Model;
     private float LastShootTime;
     private ParticleSystem ShootSystem;
     private ObjectPool<TrailRenderer> TrailPool;
@@ -62,12 +59,12 @@ public class PlayerGunSelector : MonoBehaviour
         
         if (Physics.Raycast(ShootSystem.transform.position, shootDirection, out RaycastHit hit, float.MaxValue, ShootConfig.HitMask))
             {
-                Debug.Log("pop");
+      
                 StartCoroutine(PlayTrail(ShootSystem.transform.position, hit.point, hit));
             }
             else
             {
-                Debug.Log("plpl");
+
                 RaycastHit Hit = new RaycastHit();
                 StartCoroutine(PlayTrail(ShootSystem.transform.position, ShootSystem.transform.position + (shootDirection * TrailConfig.MissDistance), Hit));
             }

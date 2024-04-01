@@ -63,7 +63,23 @@ public class HealthSystem : MonoBehaviour
             }
 
         }
-      
+        else if (collision.gameObject.tag == "BakoozaBullet" && !isDead)
+        {
+            Debug.Log("pink");
+            HapticFeedback.MediumFeedback();
+            this.Health-=10;
+            HealthBar.SetProgress(Health / MaxHealth, 3);
+            if (this.Health < 0)
+            {
+
+                dead();
+                isDead = true;
+                this.GetComponent<ZombieAttack>().enabled = false;
+                this.GetComponent<CapsuleCollider>().enabled = false;
+            }
+
+        }
+
     }
     private void SetupHealthBar(Canvas Canvas, Camera Camera)
     {

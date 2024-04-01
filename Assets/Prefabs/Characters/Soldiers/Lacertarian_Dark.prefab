@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8450902129498334204}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4630726644583209778}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ L Toe0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3862266839665843581}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ L Finger12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 364103830057003703}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ R Finger01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,7 +137,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3530427777355875771}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ L Clavicle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7421114714651286101}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ R Finger31
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,7 +202,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2528127788655753423}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ L Finger31
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -234,7 +234,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7444547393651217207}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ Pelvis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -268,7 +268,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7820141995281973459}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ L Finger4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -300,7 +300,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6257329011059950249}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ L Foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -332,7 +332,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6013540914474184656}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ R Finger32
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -363,7 +363,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9152830180179618346}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ R Finger1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -395,7 +395,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7346409335330579212}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ L Finger1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -427,7 +427,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6020908630092012595}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ L Finger42
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -459,7 +459,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 51881576846399390}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ L Finger3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -491,7 +491,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1195159403083695441}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ L UpperArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -523,7 +523,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1028447252688453639}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ L Thigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -555,7 +555,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1398777674136684434}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ R Finger22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -586,7 +586,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4123925810580663176}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ R Clavicle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -618,7 +618,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5568005567567641463}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ L Finger11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -650,7 +650,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4326633416997794373}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ R Foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -688,7 +688,7 @@ GameObject:
   - component: {fileID: 3259426458341359508}
   - component: {fileID: 5015619315619928972}
   - component: {fileID: 7470703329649023206}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lacertarian_Dark
   m_TagString: Heroes
   m_Icon: {fileID: 0}
@@ -838,7 +838,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4512223603879906165}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ R Finger11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -870,7 +870,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3749279011169154341}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ Spine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -902,7 +902,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3463013151513089999}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ L Finger01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -935,7 +935,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3118449606568731444}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ R Thigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -967,7 +967,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1450914810843716829}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ R ForearmTwist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -998,7 +998,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5150325506812840205}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ L Finger02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1029,7 +1029,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2993815967680349496}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ L Finger41
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1061,7 +1061,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2883087969652297292}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1093,7 +1093,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2554134445267850479}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ Ponytail1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1124,7 +1124,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9083669615298101502}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ L Forearm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1157,7 +1157,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 741618611007487464}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ R Finger41
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1189,7 +1189,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2555671620657167055}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ L Finger22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1220,7 +1220,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 959497567049294864}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1252,7 +1252,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3822273060129788238}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ R Calf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1284,7 +1284,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 452964552070733768}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ R Finger0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1316,7 +1316,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7377217350619843872}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ L Finger21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1348,7 +1348,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 225774742363243241}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ R UpperArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1380,7 +1380,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3459050809171640254}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RefPosAssaultRifle_Action
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1412,7 +1412,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 548643960926338250}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ L Calf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1444,7 +1444,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2757348579754456106}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1476,7 +1476,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5191871271761455719}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ L Finger32
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1508,7 +1508,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8691302078628860919}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ R Finger42
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1539,7 +1539,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1045165601961939558}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ R Finger02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1571,7 +1571,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7148997060987060}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ L ForearmTwist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1602,7 +1602,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8529769457924140626}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ Spine1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1634,7 +1634,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1503454274043269765}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ Spine2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1668,7 +1668,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9033785034387681027}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ L Finger2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1700,7 +1700,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7425603274126996139}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ R Toe0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1731,7 +1731,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4695027878492506904}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ L Finger0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1763,7 +1763,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5817102215458911757}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ R Finger4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1795,7 +1795,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2108728489488660430}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ R Finger3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1827,7 +1827,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8031375508986123262}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ R Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1864,7 +1864,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8587715106832311182}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ R Finger21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1896,7 +1896,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1633493492422265518}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ R Finger12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1928,7 +1928,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8532398431605122134}
   - component: {fileID: 1661026253610448740}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SK_Lacertarian
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2069,7 +2069,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5314042592001199798}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ R Finger2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2101,7 +2101,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4943903193736012365}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ L Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2137,7 +2137,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8051930794100634929}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Humanoid_ R Forearm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2169,10 +2169,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3459050809171640254}
     m_Modifications:
+    - target: {fileID: 485368764128630768, guid: 01835a1058271fa4ebbfc833b50497e4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 485620784181275226, guid: 01835a1058271fa4ebbfc833b50497e4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7467659248167653699, guid: 01835a1058271fa4ebbfc833b50497e4,
         type: 3}
       propertyPath: m_Name
       value: SM_SciFiAssaultRifle_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7467659248167653699, guid: 01835a1058271fa4ebbfc833b50497e4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8694493212035699030, guid: 01835a1058271fa4ebbfc833b50497e4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9115813081528581989, guid: 01835a1058271fa4ebbfc833b50497e4,
         type: 3}

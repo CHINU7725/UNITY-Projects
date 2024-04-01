@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using BigRookGames.Weapons;
 using CandyCoded.HapticFeedback;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -45,7 +46,8 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
 
     private Vector2 input = Vector2.zero;
 
-    private bool isButtonPressed = false;
+    private GameObject[] BazookaPlayers;
+    public bool isButtonPressed = false;
     protected virtual void Start()
     {
         HandleRange = handleRange;
@@ -61,19 +63,56 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
         handle.anchorMax = center;
         handle.pivot = center;
         handle.anchoredPosition = Vector2.zero;
+        BazookaPlayers = GameObject.FindGameObjectsWithTag("Bazooka");
     }
     public void Update()
     {
         
         if (isButtonPressed)
         {
-            shootAll();
+            foreach (GameObject op in CurrentNum.players)
+            {
+                op.GetComponent<Animator>().speed = 1f ;
+                if (op.GetComponent<PlayerGunSelector>() != null)
+                    op.GetComponent<PlayerGunSelector>().Shoot();
+                else if(op.GetComponentInChildren<GunfireController>()!=null)
+                {
+                 
+                    if ((op.GetComponentInChildren<GunfireController>().timeLastFired + op.GetComponentInChildren<GunfireController>().shotDelay) <= Time.time)
+                        {
+                        op.GetComponentInChildren<GunfireController>().FireWeapon();
+                        }
+                }
+            }
             HapticFeedback.LightFeedback();
+
         }
+/*        else
+        {
+           
+                foreach (GameObject op in CurrentNum.players)
+            {
+
+               if (op.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+                {
+                    op.GetComponent<Animator>(). = 0f;
+                }
+               else
+                {
+                    op.GetComponent<Animator>().StartPlayback();
+                    op.GetComponent<Animator>().speed = 1f;
+                }
+              
+                }
+            
+        }*/
         if(CurrentNum.enemies.Count == CurrentNum.EnemyDeadCount)
         {
-            Debug.Log("lppl");
-            input = Vector2.zero;
+            foreach (GameObject op in CurrentNum.players)
+            {
+                op.GetComponent<Animator>().speed = 1f;
+            }
+                input = Vector2.zero;
             isButtonPressed = false;
             handle.anchoredPosition = Vector2.zero;
         }
@@ -89,13 +128,6 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
     }
 
 
-    public void shootAll()
-    {
-        foreach (GameObject op in CurrentNum.players)
-        {
-            op.GetComponent<PlayerGunSelector>().Shoot();
-        }
-    }
 
     public void OnDrag(PointerEventData eventData)
     {

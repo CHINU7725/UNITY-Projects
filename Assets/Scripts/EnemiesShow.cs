@@ -16,17 +16,28 @@ public class EnemiesShow : MonoBehaviour
     public int TotalEnemies;
 
 
+  /*  private void Start()
+    {
+        
+       
+    }*/
+
     public void PlaceEnemy(int totalCount)
     {
+        characterPos = new Transform[50];
+        for (int i = 0; i < this.transform.childCount; i++)
+        {
+            characterPos[i] = this.transform.GetChild(i);
+        }
         CurrentNum.EnemiesCount = totalCount;
-        int normalCharacterCount = totalCount % 5;
-        int superCharacterCount = (totalCount / 5) % 5;
-        int ultraCharacterCount = (totalCount / 25) % 5;
-        int proMaxCharacterCount = totalCount / 125;
+        int normalCharacterCount = totalCount % 8;
+        int superCharacterCount = (totalCount / 8) % 8;
+        int ultraCharacterCount = (totalCount / 64) % 8;
+        int proMaxCharacterCount = totalCount / 512;
 
         // Ensure the total number of characters does not exceed 8
         int totalCharacters = normalCharacterCount + superCharacterCount + ultraCharacterCount + proMaxCharacterCount;
-        if (totalCharacters > 16)
+        if (totalCharacters > 49)
         {
             Debug.LogWarning("Total number of characters cannot exceed 16.");
         }
