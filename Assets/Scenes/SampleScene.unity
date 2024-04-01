@@ -2484,17 +2484,17 @@ PrefabInstance:
     - target: {fileID: 2431672356192716042, guid: c1300cce3d2adae43925d5d681bb4782,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.11703084
+      value: 0.11703085
       objectReference: {fileID: 0}
     - target: {fileID: 2431672356192716042, guid: c1300cce3d2adae43925d5d681bb4782,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000017088151
+      value: -0.000000017088139
       objectReference: {fileID: 0}
     - target: {fileID: 2431672356192716042, guid: c1300cce3d2adae43925d5d681bb4782,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000000002013678
+      value: 0.0000000020136768
       objectReference: {fileID: 0}
     - target: {fileID: 2431672356192716042, guid: c1300cce3d2adae43925d5d681bb4782,
         type: 3}
@@ -3402,19 +3402,13 @@ PrefabInstance:
         type: 3}
       propertyPath: asso
       value: 
-      objectReference: {fileID: 1904920339000050273}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 5715060925047994150, guid: 78d17730a4107bd4994ee1b3d162e21c, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78d17730a4107bd4994ee1b3d162e21c, type: 3}
---- !u!82 &1904920339000050273 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 6923600897365797245, guid: 78d17730a4107bd4994ee1b3d162e21c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1904920339000050272}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2181570742297091848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3846,6 +3840,7 @@ MonoBehaviour:
   snapY: 0
   background: {fileID: 2929252284159011665}
   handle: {fileID: 2929252284413798571}
+  isButtonPressed: 0
 --- !u!1 &2929252284413798570
 GameObject:
   m_ObjectHideFlags: 0
@@ -5556,9 +5551,9 @@ MonoBehaviour:
     type: 3}
   Supercharacter: {fileID: 1983256848784259631, guid: 1ab8f72ee34bc2a49830a934842199a9,
     type: 3}
-  SuperUltracharacter: {fileID: 3116136565204103887, guid: 750747d763417234daca9724c3a42402,
+  SuperUltracharacter: {fileID: 4610529810236587240, guid: b9206552c283ad74bb84dcc46fdf66d3,
     type: 3}
-  ProMaxCharacter: {fileID: 4610529810236587240, guid: b9206552c283ad74bb84dcc46fdf66d3,
+  ProMaxCharacter: {fileID: 3116136565204103887, guid: 750747d763417234daca9724c3a42402,
     type: 3}
 --- !u!23 &9159915867932397210
 MeshRenderer:

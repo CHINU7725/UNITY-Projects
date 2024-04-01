@@ -83,6 +83,13 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
                         op.GetComponentInChildren<GunfireController>().FireWeapon();
                         }
                 }
+                else if(op.GetComponentInChildren<Flamethrower>() != null)
+                {
+                    if (op.GetComponentInChildren<FlamethrowerAttackRadius>() != null)
+                        op.GetComponentInChildren<FlamethrowerAttackRadius>().enabled = true;
+                    op.GetComponentInChildren<Flamethrower>().Shoot();
+                   
+                }
             }
             HapticFeedback.LightFeedback();
 
@@ -203,6 +210,17 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
         GameObject.FindGameObjectWithTag("GameController").GetComponent<Swipe>().localView();
         isButtonPressed = false;
         handle.anchoredPosition = Vector2.zero;
+
+        foreach (GameObject op in CurrentNum.players)
+        {
+            if(op.GetComponentInChildren<Flamethrower>()!=null)
+            {
+
+                op.GetComponentInChildren<Flamethrower>().StopShooting();
+                if (op.GetComponentInChildren<FlamethrowerAttackRadius>()!=null)
+                op.GetComponentInChildren<FlamethrowerAttackRadius>().enabled = false;
+            }
+        }
     }
 
     protected Vector2 ScreenPointToAnchoredPosition(Vector2 screenPosition)

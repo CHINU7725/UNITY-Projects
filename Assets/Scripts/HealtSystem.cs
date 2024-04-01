@@ -13,6 +13,16 @@ public class HealthSystem : MonoBehaviour
     private float MaxHealth;
     Animator animator;
     private bool isDead = false;
+
+    [SerializeField]
+    private bool _IsBurning;
+    public bool IsBurning { get => _IsBurning; set => _IsBurning = value; }
+
+    private Coroutine BurnCoroutine;
+
+
+/*    public GameObject TinyFlames;*/
+
     private void Start()
     {
         animator = this.GetComponent<Animator>();
@@ -53,7 +63,7 @@ public class HealthSystem : MonoBehaviour
             HapticFeedback.MediumFeedback();
             this.Health--;
             HealthBar.SetProgress(Health / MaxHealth,3);
-            if (this.Health < 0)
+            if (this.Health <= 0)
             {
 
                 dead();
@@ -69,7 +79,7 @@ public class HealthSystem : MonoBehaviour
             HapticFeedback.MediumFeedback();
             this.Health-=10;
             HealthBar.SetProgress(Health / MaxHealth, 3);
-            if (this.Health < 0)
+            if (this.Health <= 0)
             {
 
                 dead();
@@ -84,6 +94,66 @@ public class HealthSystem : MonoBehaviour
     private void SetupHealthBar(Canvas Canvas, Camera Camera)
     {
         HealthBar.transform.SetParent(Canvas.transform);
+    }
+
+
+
+    public void StartBurning(int DamagePerSecond)
+    {
+        if (!isDead)
+        {
+            IsBurning = true;
+            if (BurnCoroutine != null)
+            {
+                StopCoroutine(BurnCoroutine);
+            }
+
+            BurnCoroutine = StartCoroutine(Burn(DamagePerSecond));
+        }
+    }
+
+    private IEnumerator Burn(int DamagePerSecond)
+    {
+        float minTimeToDamage = 1f / DamagePerSecond;
+        WaitForSeconds wait = new WaitForSeconds(minTimeToDamage);
+        int damagePerTick = Mathf.FloorToInt(minTimeToDamage) + 1;
+
+        this.Health -= 2;
+        HealthBar.SetProgress(Health / MaxHealth, 3);
+        if (this.Health <= 0)
+        {
+
+            dead();
+            isDead = true;
+            this.GetComponent<ZombieAttack>().enabled = false;
+            this.GetComponent<CapsuleCollider>().enabled = false;
+            yield return null;
+        }
+        while (IsBurning && !isDead)
+        {
+            yield return wait;
+            this.Health -= 2;
+            HealthBar.SetProgress(Health / MaxHealth, 3);
+            if (this.Health <= 0)
+            {
+
+                dead();
+                isDead = true;
+                this.GetComponent<ZombieAttack>().enabled = false;
+                this.GetComponent<CapsuleCollider>().enabled = false;
+            }
+        }
+
+
+    }
+
+    public void StopBurning()
+    {
+        IsBurning = false;
+        if (BurnCoroutine != null)
+        {
+            StopCoroutine(BurnCoroutine);
+        }
     }
 
 }
