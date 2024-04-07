@@ -37,7 +37,6 @@ Material:
   m_InvalidKeywords:
   - EFFECT_BUMP
   - _ALPHABLEND_ON
-  - _FLIPBOOKBLENDING_OFF
   - _REQUIRE_UV2
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0

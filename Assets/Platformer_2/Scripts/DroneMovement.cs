@@ -2,26 +2,30 @@ using UnityEngine;
 
 public class DroneMovement : MonoBehaviour
 {
-    public float floatHeight = 0.5f; // Maximum height of the floating motion
-    public float floatSpeed = 1f; // Speed of the floating motion
+    public float speed = 1f; // Translation speed
+    public float maxPositionX = 3.13f; // Maximum position along the local X-axis
 
-    private float currentHeight;
-    private float timeSinceStart;
+    private bool isIncreasing = true; // Flag to track the translation direction
+    private Vector3 initialPosition; // Store the initial local position of the wall
 
     void Start()
     {
-        currentHeight = transform.position.y; // Store the initial Y position
+        initialPosition = transform.localPosition; // Store the initial local position
     }
 
     void Update()
     {
-        // Calculate the oscillating Y position
-        float newHeight = currentHeight + Mathf.Sin(timeSinceStart * floatSpeed) * floatHeight;
+        // Calculate the translation direction
+        float direction = isIncreasing ? 1f : -1f;
 
-        // Update the drone's position
-        transform.position = new Vector3(transform.position.x, newHeight, transform.position.z);
+        // Translate the wall along its local X-axis
+        transform.localPosition += transform.up * direction * speed * Time.deltaTime;
 
-        // Update the timer
-        timeSinceStart += Time.deltaTime;
+        // Check if the wall has reached the maximum position in either direction
+        float currentPositionX = transform.localPosition.y;
+        if (Mathf.Abs(currentPositionX) >= maxPositionX)
+        {
+            isIncreasing = !isIncreasing; // Switch direction
+        }
     }
 }

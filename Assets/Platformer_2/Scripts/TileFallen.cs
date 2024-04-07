@@ -4,17 +4,19 @@ using System.Collections.Generic;
 
 public class RandomActivateRigidbodies : MonoBehaviour
 {
-    public List<GameObject> gameObjectList = new List<GameObject>(); // Public list of GameObjects
+     List<GameObject> gameObjectList = new List<GameObject>(); // Public list of GameObjects
     public float shakeTime = 1f; // Duration of the shaking effect
     private float shakeStrength = 0.05f; // Strength of the shaking effect
+    public int NumberOfFallenTiles = 8;
 
     void Start()
     {
+        PopulateGameObjectList();
         // Shuffle the list
         ShuffleList(gameObjectList);
 
         // Activate the rigidbodies of the first 4 GameObjects with a shaking effect
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < NumberOfFallenTiles; i++)
         {
             if (gameObjectList.Count > i)
             {
@@ -36,7 +38,14 @@ public class RandomActivateRigidbodies : MonoBehaviour
             list[i] = temp;
         }
     }
-
+    void PopulateGameObjectList()
+    {
+        // Get all child GameObjects and add them to the gameObjectList
+        foreach (Transform child in transform)
+        {
+            gameObjectList.Add(child.gameObject);
+        }
+    }
     IEnumerator ShakeAndActivateRigidbody(GameObject obj)
     {
         Vector3 originalPosition = obj.transform.position;
