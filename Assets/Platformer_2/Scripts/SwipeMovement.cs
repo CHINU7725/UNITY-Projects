@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class SwipeMovement : MonoBehaviour
 {
@@ -14,21 +13,17 @@ public class SwipeMovement : MonoBehaviour
             // Get the first touch
             Touch touch = Input.GetTouch(0);
 
-            // Check if the touch is in the "Began" phase
-            if (touch.phase == TouchPhase.Began)
+            // Get the position of the touch in world space
+            Ray ray = Camera.main.ScreenPointToRay(touch.position);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit))
             {
-                // Get the position of the touch in world space
-                Ray ray = Camera.main.ScreenPointToRay(touch.position);
-                RaycastHit hit;
-                if (Physics.Raycast(ray, out hit))
-                {
-                    // Set the target position to the touch position
-                    targetPosition = hit.point;
-                }
+                // Set the target position to the touch position, but only on the x-axis
+                targetPosition = new Vector3(hit.point.x, playerObject.transform.position.y, playerObject.transform.position.z);
             }
         }
 
         // Move the player towards the target position
-        playerObject.transform.position = Vector3.Lerp(playerObject.transform.position, targetPosition, Time.deltaTime * 5f);
+        playerObject.transform.position = Vector3.MoveTowards(playerObject.transform.position, targetPosition, Time.deltaTime * 10f);
     }
 }
