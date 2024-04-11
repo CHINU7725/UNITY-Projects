@@ -8,4 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CartoonEndless.unity
     guid: 6af8e389271b33e48baecf8c6004ebdf
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000,
+      guid: 7f822609ab3042747b3b6fb0181b86dd, type: 2}
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 629ab16e439db474e8a4053ee272197c,
+      type: 2}
+    com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000,
+      guid: 96d562e4ab1260843be605380ad01c09, type: 2}
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000,
+      guid: 8a4f27c2e02167542a27f57013073cd6, type: 2}

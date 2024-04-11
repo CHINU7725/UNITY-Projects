@@ -97,7 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 26fbbfbc1a665354394adb3d15c68f0f,
+    type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -343,12 +344,12 @@ PrefabInstance:
     - target: {fileID: 2339162970057622612, guid: 9511540762a08fd4781f3f3202653553,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000016349226
+      value: 0.000000016349222
       objectReference: {fileID: 0}
     - target: {fileID: 2339162970057622612, guid: 9511540762a08fd4781f3f3202653553,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000005363059
+      value: -0.0000000053630584
       objectReference: {fileID: 0}
     - target: {fileID: 4001332161206965935, guid: 9511540762a08fd4781f3f3202653553,
         type: 3}
@@ -934,7 +935,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1295733030}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.31169012, y: -0.000000016349226, z: 0.000000005363059, w: 0.9501838}
+  m_LocalRotation: {x: 0.31169012, y: 0.000000016349222, z: -0.0000000053630584, w: 0.9501838}
   m_LocalPosition: {x: 1.2121773, y: 14.7, z: -54.399998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1391,7 +1392,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
+  m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
