@@ -78,6 +78,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Roller
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d22d0368145b2d040b2e3a8e23715143,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d22d0368145b2d040b2e3a8e23715143,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -94,6 +104,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1944130416078457797}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d22d0368145b2d040b2e3a8e23715143,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 904433978845878003}
   m_SourcePrefab: {fileID: 100100000, guid: d22d0368145b2d040b2e3a8e23715143, type: 3}
 --- !u!1 &5809918485590677263 stripped
 GameObject:
@@ -120,7 +134,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4805406365358886229, guid: d22d0368145b2d040b2e3a8e23715143, type: 3}
 --- !u!114 &1944130416078457797
@@ -136,6 +150,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxRotationSpeed: 90
+--- !u!54 &904433978845878003
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5809918485590677263}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 14
+  m_CollisionDetection: 0
 --- !u!4 &6623434646894661045 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d22d0368145b2d040b2e3a8e23715143,
@@ -214,6 +255,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: obstacle_2_002
+      objectReference: {fileID: 0}
+    - target: {fileID: 1758789730192030330, guid: f92468cbe41cd264e9fabb1b370a9903,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

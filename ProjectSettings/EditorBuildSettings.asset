@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/TestObstacles.unity
-    guid: 12c5be35e295a7645b26ea68545ae430
+    path: Assets/Scenes/CartoonEndless.unity
+    guid: 6af8e389271b33e48baecf8c6004ebdf
   m_configObjects: {}

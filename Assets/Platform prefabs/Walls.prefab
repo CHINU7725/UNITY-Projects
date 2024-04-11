@@ -10,13 +10,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1603425950256391942}
   - component: {fileID: 5191745875769164912}
+  - component: {fileID: 2161304785189499172}
   m_Layer: 0
   m_Name: Walls
-  m_TagString: Untagged
+  m_TagString: Respawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1603425950256391942
 Transform:
   m_ObjectHideFlags: 0
@@ -48,7 +49,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cfced326ed966a4fb6895c4b10ad5e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 3
+--- !u!65 &2161304785189499172
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7725049160229856057}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.7343812, y: 1, z: 3.4863539}
+  m_Center: {x: 0.20538282, y: 0, z: -1.2431769}
 --- !u!1001 &3553670825279110300
 PrefabInstance:
   m_ObjectHideFlags: 0

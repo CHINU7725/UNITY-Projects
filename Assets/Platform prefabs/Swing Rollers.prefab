@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6517726007600047087}
   - component: {fileID: 3455184610891330483}
+  - component: {fileID: 8905079290132546886}
   m_Layer: 0
   m_Name: Swing Rollers
-  m_TagString: Untagged
+  m_TagString: Respawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,7 +48,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cfced326ed966a4fb6895c4b10ad5e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 3
+--- !u!65 &8905079290132546886
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750862285659657801}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.7343812, y: 1, z: 3.4863539}
+  m_Center: {x: 0.20538282, y: 0, z: -1.2431769}
 --- !u!1001 &3453146124256111415
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -79,7 +101,7 @@ PrefabInstance:
     - target: {fileID: 6623434646894661045, guid: f8df84de1bc9e294cb927293f71dc317,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.26
+      value: 5.35
       objectReference: {fileID: 0}
     - target: {fileID: 6623434646894661045, guid: f8df84de1bc9e294cb927293f71dc317,
         type: 3}
@@ -225,6 +247,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: platform_002 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6599040128314212883, guid: f73908890837e24438691139b4817b71,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -267,7 +294,7 @@ PrefabInstance:
     - target: {fileID: 6623434646894661045, guid: f8df84de1bc9e294cb927293f71dc317,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.26
+      value: 5.35
       objectReference: {fileID: 0}
     - target: {fileID: 6623434646894661045, guid: f8df84de1bc9e294cb927293f71dc317,
         type: 3}

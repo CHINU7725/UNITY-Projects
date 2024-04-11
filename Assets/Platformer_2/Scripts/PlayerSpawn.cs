@@ -18,17 +18,18 @@ public class PlayerSpawn : MonoBehaviour
         }
     }
 
-    private void SpawnMultipleObjects()
+    public void SpawnMultipleObjects()
     {
         for (int i = 0; i < numObjectsToSpawn; i++)
         {
-            Instantiate(playerPrefab, new Vector3(magnet.position.x + 0.1f, magnet.position.y, magnet.position.z), Quaternion.identity);
+           var character =  Instantiate(playerPrefab, new Vector3(magnet.position.x + 0.1f, magnet.position.y, magnet.position.z), Quaternion.identity);
+            character.transform.SetParent(transform, false);
         }
     }
 
     IEnumerator disableMagnet()
     {
         yield return new WaitForSeconds(2f);
-       /* magnet.gameObject.GetComponent<MagneticField>().enabled=false;*/
+      /*  magnet.gameObject.GetComponent<MagneticField>().enabled = false;*/
     }
 }

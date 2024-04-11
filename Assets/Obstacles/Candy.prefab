@@ -66,7 +66,17 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b92ac7b306386e841be04f5a0049fb16,
         type: 3}
       propertyPath: m_Name
-      value: obstacle_10_001
+      value: Candy
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b92ac7b306386e841be04f5a0049fb16,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b92ac7b306386e841be04f5a0049fb16,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -76,6 +86,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 6046295366623915375}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b92ac7b306386e841be04f5a0049fb16,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7679515102488621130}
   m_SourcePrefab: {fileID: 100100000, guid: b92ac7b306386e841be04f5a0049fb16, type: 3}
 --- !u!1 &1397327584608497234 stripped
 GameObject:
@@ -102,6 +116,33 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 2107282539759254627, guid: b92ac7b306386e841be04f5a0049fb16, type: 3}
+--- !u!54 &7679515102488621130
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397327584608497234}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 14
+  m_CollisionDetection: 0

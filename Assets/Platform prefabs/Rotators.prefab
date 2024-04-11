@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3172075880149804340}
   - component: {fileID: 7688484657336678617}
+  - component: {fileID: 1741132078240479077}
   m_Layer: 0
   m_Name: Rotators
-  m_TagString: Untagged
+  m_TagString: Respawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,8 +31,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2108254274488877927}
   - {fileID: 8624596877343150337}
+  - {fileID: 2108254274488877927}
   - {fileID: 8521386973127606383}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -47,7 +48,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cfced326ed966a4fb6895c4b10ad5e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 3
+--- !u!65 &1741132078240479077
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1362129988851761060}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.7343812, y: 1, z: 3.4863539}
+  m_Center: {x: 0.20538282, y: 0, z: -1.2431769}
 --- !u!1001 &2841746687011883432
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -84,17 +106,17 @@ PrefabInstance:
     - target: {fileID: 5827465108280301737, guid: f73908890837e24438691139b4817b71,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5827465108280301737, guid: f73908890837e24438691139b4817b71,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5827465108280301737, guid: f73908890837e24438691139b4817b71,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 26.02
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5827465108280301737, guid: f73908890837e24438691139b4817b71,
         type: 3}
@@ -141,6 +163,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: platform_002
       objectReference: {fileID: 0}
+    - target: {fileID: 6599040128314212883, guid: f73908890837e24438691139b4817b71,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -168,17 +195,17 @@ PrefabInstance:
     - target: {fileID: 6352586514519571505, guid: b7f8ae4ae6b77b14e80ee4d7a2b779d8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.156027
+      value: -5.1
       objectReference: {fileID: 0}
     - target: {fileID: 6352586514519571505, guid: b7f8ae4ae6b77b14e80ee4d7a2b779d8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.82
       objectReference: {fileID: 0}
     - target: {fileID: 6352586514519571505, guid: b7f8ae4ae6b77b14e80ee4d7a2b779d8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 13.307087
+      value: -12.51
       objectReference: {fileID: 0}
     - target: {fileID: 6352586514519571505, guid: b7f8ae4ae6b77b14e80ee4d7a2b779d8,
         type: 3}
@@ -242,17 +269,17 @@ PrefabInstance:
     - target: {fileID: 6352586514519571505, guid: b7f8ae4ae6b77b14e80ee4d7a2b779d8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 4.99
       objectReference: {fileID: 0}
     - target: {fileID: 6352586514519571505, guid: b7f8ae4ae6b77b14e80ee4d7a2b779d8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.77
       objectReference: {fileID: 0}
     - target: {fileID: 6352586514519571505, guid: b7f8ae4ae6b77b14e80ee4d7a2b779d8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -26.99
       objectReference: {fileID: 0}
     - target: {fileID: 6352586514519571505, guid: b7f8ae4ae6b77b14e80ee4d7a2b779d8,
         type: 3}

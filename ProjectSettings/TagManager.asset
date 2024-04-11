@@ -8,15 +8,11 @@ TagManager:
   - Wall
   - Enemies
   - Ground
-  - StartFire
   - Bridge
   - BridgeSpawner
   - Camera
-  - Joystick
-  - Bullet
   - Heroes
-  - Bazooka
-  - BakoozaBullet
+  - Obstacle
   layers:
   - Default
   - TransparentFX
@@ -27,8 +23,8 @@ TagManager:
   - Bullet
   - Enemy
   - Heroes
-  - 
-  - 
+  - Magnet
+  - Obstacle
   - 
   - 
   - 
