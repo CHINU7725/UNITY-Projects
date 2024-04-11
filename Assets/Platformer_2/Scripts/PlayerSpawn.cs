@@ -29,6 +29,6 @@ public class PlayerSpawn : MonoBehaviour
     IEnumerator disableMagnet()
     {
         yield return new WaitForSeconds(2f);
-        magnet.gameObject.GetComponent<MagneticField>().enabled=false;
+       /* magnet.gameObject.GetComponent<MagneticField>().enabled=false;*/
     }
 }
