@@ -13,6 +13,9 @@ TagManager:
   - Camera
   - Heroes
   - Obstacle
+  - Joystick
+  - Bazooka
+  - BakoozaBullet
   layers:
   - Default
   - TransparentFX
@@ -25,7 +28,7 @@ TagManager:
   - Heroes
   - Magnet
   - Obstacle
-  - 
+  - Wall
   - 
   - 
   - 

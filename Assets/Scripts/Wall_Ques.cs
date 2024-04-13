@@ -39,13 +39,13 @@ public class Wall_Ques : MonoBehaviour
         }
         if (equation != null)
         {
-            equation.text = randomOperator + " " + n;
+            equation.text = randomOperator + "" + n;
         }
         else
         {
           
         }
-        if (randomOperator == 'X' ? CurrentNum.characterNum * n >= 1000 : randomOperator == '+' ? CurrentNum.characterNum+n >= 1000 : false)
+        if (randomOperator == 'X' ? CurrentNum.characterNum * n >= 250 : randomOperator == '+' ? CurrentNum.characterNum+n >= 250 : false)
         {
             GameObject[] innerWalls = GameObject.FindGameObjectsWithTag("InnerWall");
             // Loop through the array of inner walls
@@ -85,7 +85,7 @@ public class Wall_Ques : MonoBehaviour
 
         if (equation != null)
         {
-            equation.text = randomOperator + " " + n;
+            equation.text = randomOperator + "" + n;
         }
         else
         {
@@ -110,10 +110,7 @@ public class Wall_Ques : MonoBehaviour
         {
             equation.text = "SQRT";
         }
-        else
-        {
-          
-        }
+
     }
 
 
@@ -129,7 +126,7 @@ public class Wall_Ques : MonoBehaviour
             randomOperator = OperatorList.operatorList[index][1];
         }
         n = Random.Range(1, 5);
-        equation.text = randomOperator + " " + n;
+        equation.text = randomOperator + "" + n;
     }
 
 }

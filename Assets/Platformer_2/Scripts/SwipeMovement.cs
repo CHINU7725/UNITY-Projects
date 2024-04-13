@@ -5,7 +5,7 @@ public class SwipeMovement : MonoBehaviour
 
     private Vector3 targetPosition; // The position the player should move to
     private Touch touch;
-    void Update()
+    void FixedUpdate()
     {
      /*   // Check for touch input
         if (Input.touchCount > 0)
