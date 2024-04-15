@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff23b71ccae83de4aa5c22491f0c11d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 6
   maxPositionX: 3.13
 --- !u!1001 &959947928272110541
 PrefabInstance:
@@ -68,7 +68,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: e8bf5900d9a0f194cafe320a5098acfe,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e8bf5900d9a0f194cafe320a5098acfe,
         type: 3}
@@ -108,6 +108,11 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: e8bf5900d9a0f194cafe320a5098acfe,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e8bf5900d9a0f194cafe320a5098acfe,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e8bf5900d9a0f194cafe320a5098acfe,
@@ -165,7 +170,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30

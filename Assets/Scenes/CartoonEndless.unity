@@ -1123,7 +1123,7 @@ Transform:
   m_GameObject: {fileID: 993495452}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.0456445, y: 0.52, z: 62.9}
+  m_LocalPosition: {x: 1.0456445, y: 1.3, z: 62.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1696,7 +1696,7 @@ GameObject:
   - component: {fileID: 1168441151}
   m_Layer: 0
   m_Name: Level1
-  m_TagString: Untagged
+  m_TagString: Respawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1721,7 +1721,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: 60}
 --- !u!33 &1168441149
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2001,15 +2001,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 993495452}
-  prefabsToSpawn:
-  - {fileID: 4704487946753222521, guid: 55f9b9479187514439560d6584f02ef5, type: 3}
-  - {fileID: 5751970557729435407, guid: 8094e559283f31841b88d4d9239f3a45, type: 3}
-  - {fileID: 2129928774879219244, guid: 0936690757cefdd40aafd569d87dd0ca, type: 3}
-  - {fileID: 2754965856309513607, guid: bba8383ae8a21654a9ae73e5d4eb607f, type: 3}
-  - {fileID: 1362129988851761060, guid: 6a85cdff3af87664da605d53bf63b891, type: 3}
-  - {fileID: 3869891261160631357, guid: 1efe5a330af2acb4d9cc3d7798da8fa1, type: 3}
-  - {fileID: 750862285659657801, guid: ee11d1b4e5c87cc40b5f5d48c4bbbad1, type: 3}
-  - {fileID: 7725049160229856057, guid: 657d02f758cdc4d4cbffbb43f465cd02, type: 3}
+  LeveList:
+  - {fileID: 6425649815077491182, guid: 11d897e9c554ce44d88ed2372129eb0c, type: 3}
+  - {fileID: 6194406458021141433, guid: 4dde29571b4f0b641b776a5726a6b543, type: 3}
+  - {fileID: 1102563189172529785, guid: b26a3a2d1a723484f9a55cd4121bd0eb, type: 3}
+  - {fileID: 3714398811955417805, guid: 25e938828c5137e4ba837723fe6bc127, type: 3}
+  - {fileID: 1623507191937575300, guid: 80fddaed601ceb34cb734447a77c5ba2, type: 3}
+  - {fileID: 6971884475232992106, guid: 431c44dd13abffc429d9d010b60e678b, type: 3}
+  - {fileID: 3394354044398755809, guid: 7c144fe1a4efe534a9321e17bcb5270a, type: 3}
+  - {fileID: 3318433184464582556, guid: ae5fb360cfb7f1b4a8bacd022404f095, type: 3}
   DroneSpawnPoint: {fileID: 726817537}
   DroneSpawn: {fileID: 3655423292939501968, guid: 39ee576b2c1c61048b5356f46a6d7c48,
     type: 3}
