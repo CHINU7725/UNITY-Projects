@@ -28,7 +28,6 @@ MonoBehaviour:
   - {fileID: 5809918485590677263, guid: f8df84de1bc9e294cb927293f71dc317, type: 3}
   - {fileID: 1708602186008510728, guid: 548027dc62cadef499bd383673e0e132, type: 3}
   - {fileID: 6008711661011101323, guid: b7f8ae4ae6b77b14e80ee4d7a2b779d8, type: 3}
-  - {fileID: 5080274887119465262, guid: 340d3e8bd0cced641bc73238e0ee139c, type: 3}
   RightObjects:
   - {fileID: 1556833564757959267, guid: 15ec2358954ff6d4e9864f9c09389829, type: 3}
   - {fileID: 4827739005572174130, guid: a5cbc247da4d0a94db8b4bc826743497, type: 3}
@@ -36,7 +35,6 @@ MonoBehaviour:
   - {fileID: 5809918485590677263, guid: f8df84de1bc9e294cb927293f71dc317, type: 3}
   - {fileID: 1708602186008510728, guid: 548027dc62cadef499bd383673e0e132, type: 3}
   - {fileID: 6008711661011101323, guid: b7f8ae4ae6b77b14e80ee4d7a2b779d8, type: 3}
-  - {fileID: 1584071801321732315, guid: ae5d787699e40cd459b60840c6094b43, type: 3}
   Sliders:
   - {fileID: 4820402418542100077, guid: 3eea104a4677e864dbdf3b68974f4152, type: 3}
   - {fileID: 113437026543812252, guid: 98addf474307f8042b2a62fd647f9248, type: 3}

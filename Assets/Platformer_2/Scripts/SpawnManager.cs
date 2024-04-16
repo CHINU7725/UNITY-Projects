@@ -14,20 +14,12 @@ public class SpawnManager : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Respawn")
-        {
-            Destroy(other.gameObject);
+        { 
             Instantiate(DroneSpawn, DroneSpawnPoint.position, Quaternion.identity);
             int index = Random.Range(0, LeveList.Count - 1);
             GameObject spawn = LeveList[index];
             GameObject SpawnedLevel =  Instantiate(spawn, spawnPoint.transform.position, Quaternion.identity);
             SpawnedLevel.GetComponent<LevelDesigning>().PlaceObjects();
-        }
-        else
-        {
-            if(other.gameObject.tag =="Wall")
-            {
-                Destroy(other.gameObject);
-            }
         }
     }
 }
