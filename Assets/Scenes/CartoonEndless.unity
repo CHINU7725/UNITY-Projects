@@ -1580,6 +1580,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Axe
       objectReference: {fileID: 0}
+    - target: {fileID: 1556833564757959267, guid: 15ec2358954ff6d4e9864f9c09389829,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2220603698491291865, guid: 15ec2358954ff6d4e9864f9c09389829,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3509,6 +3514,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Roller
+      objectReference: {fileID: 0}
+    - target: {fileID: 5809918485590677263, guid: f8df84de1bc9e294cb927293f71dc317,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6623434646894661045, guid: f8df84de1bc9e294cb927293f71dc317,
         type: 3}
