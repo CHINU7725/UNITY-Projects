@@ -125,7 +125,7 @@ public class Wall_Ques : MonoBehaviour
         {
             randomOperator = OperatorList.operatorList[index][1];
         }
-        n = Random.Range(1, 5);
+        n = Random.Range(10, 50);
         equation.text = randomOperator + "" + n;
     }
 
