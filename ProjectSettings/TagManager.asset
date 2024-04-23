@@ -16,6 +16,7 @@ TagManager:
   - Joystick
   - Bazooka
   - BakoozaBullet
+  - Environment
   layers:
   - Default
   - TransparentFX
