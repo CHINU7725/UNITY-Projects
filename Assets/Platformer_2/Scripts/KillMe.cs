@@ -10,7 +10,7 @@ public class KillMe : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Obstacle"))
         {
-
+            CurrentNum.characterNum--;
             Destroy(this.gameObject);
             HapticFeedback.MediumFeedback();
             var spawner = Instantiate(splash,new Vector3(transform.position.x,transform.position.y+1.3f,transform.position.z),Quaternion.identity);
