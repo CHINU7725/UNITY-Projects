@@ -10,6 +10,12 @@ public class EndGame : MonoBehaviour
     public TextMeshProUGUI yop;
     private void Update()
     {
+        StartCoroutine(resetScene());
+    }
+
+    IEnumerator resetScene()
+    {
+        yield return new WaitForSeconds(4);
         yop.text = CurrentNum.characterNum.ToString();
         if (CurrentNum.characterNum == 0)
         {
