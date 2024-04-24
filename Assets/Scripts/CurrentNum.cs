@@ -5,7 +5,7 @@ using UnityEngine;
 public class CurrentNum : MonoBehaviour
 {
     public static int characterNum=3;
-    public static int PrevNum=1;
+    public static int PrevNum = 3;
 
 
     public static int EnemiesCount=0;
@@ -14,7 +14,7 @@ public class CurrentNum : MonoBehaviour
 
     public static Vector3 enemyPosition=Vector3.up;
 
-
+    
 
 
 
@@ -25,7 +25,7 @@ public class CurrentNum : MonoBehaviour
     public static void reset()
     {
         characterNum = 3;
-        PrevNum = 1 ;
+        PrevNum = 3 ;
         EnemiesCount = 0;
         EnemyDeadCount =0 ;
         players.Clear();

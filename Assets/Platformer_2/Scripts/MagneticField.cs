@@ -4,11 +4,11 @@ public class MagneticField : MonoBehaviour
 {
     public float magneticForce = 10f; // The strength of the magnetic force
     public float magneticRadius = 5f; // The radius of the magnetic field
-
+    public string LayerPlayer = "Heroes";
     private void FixedUpdate()
     {
         // Find all objects with the "Player" tag within the magnetic radius
-        Collider[] playersInRange = Physics.OverlapSphere(transform.position, magneticRadius, 1 << LayerMask.NameToLayer("Heroes"));
+        Collider[] playersInRange = Physics.OverlapSphere(transform.position, magneticRadius, 1 << LayerMask.NameToLayer(LayerPlayer));
 
         foreach (Collider player in playersInRange)
         {

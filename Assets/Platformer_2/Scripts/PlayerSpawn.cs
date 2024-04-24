@@ -10,6 +10,16 @@ public class PlayerSpawn : MonoBehaviour
     /*public int numObjectsToSpawn = 10; // Number of objects to spawn when space is pressed
 */
 
+    public int playerCount=0;
+
+    bool hiop = true;
+
+   IEnumerator sahikar()
+    {
+        yield return new WaitForSeconds(1);
+        hiop = true;
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown("space"))
@@ -22,6 +32,7 @@ public class PlayerSpawn : MonoBehaviour
 
     public void SpawnMultipleObjects(int numObjectsToSpawn)
     {
+        playerCount = numObjectsToSpawn;
         Debug.Log(numObjectsToSpawn);
         for (int i = 0; i < numObjectsToSpawn; i++)
         {
@@ -48,8 +59,14 @@ public class PlayerSpawn : MonoBehaviour
 
             if (other.gameObject.GetComponent<Wall_Ques>().randomOperator == '+')
             {
-                SpawnMultipleObjects(num);
-                CurrentNum.characterNum += num;
+                if (hiop)
+                {
+                    SpawnMultipleObjects(num);
+                     CurrentNum.characterNum += num;
+                }
+                hiop = false;
+                StartCoroutine(sahikar());
+               
             }
             if (other.gameObject.GetComponent<Wall_Ques>().randomOperator == '/')
             {
@@ -77,9 +94,9 @@ public class PlayerSpawn : MonoBehaviour
                 CurrentNum.characterNum = (int)math.sqrt(CurrentNum.characterNum);
             }
 
-          
 
 
+            CurrentNum.PrevNum = CurrentNum.characterNum;
 
         }
     }
