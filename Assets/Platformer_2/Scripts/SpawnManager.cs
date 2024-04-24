@@ -19,12 +19,13 @@ public class SpawnManager : MonoBehaviour
     {
         if (other.gameObject.tag == "Respawn")
         {
+
             CurrentNum.EnemyDeadCount = 0;
             CurrentNum.EnemiesCount = 0;
             GameObject kaka= Instantiate(DroneSpawn, DroneSpawnPoint.position, Quaternion.identity);
             GameObject spawn;
             i++;
-            if (i % 6 != 0)
+            if (i % 3 != 0)
             {
               spawn = LeveList[1];
               
@@ -35,7 +36,7 @@ public class SpawnManager : MonoBehaviour
             }
             GameObject SpawnedLevel = Instantiate(spawn, spawnPoint.transform.position, Quaternion.identity);
 
-            if (i % 6 == 0)
+            if (i %3  == 0)
             {
                 i = 0;
                 Wall_Ques[] io = kaka.GetComponentsInChildren<Wall_Ques>();
@@ -43,7 +44,7 @@ public class SpawnManager : MonoBehaviour
 
                 foreach (Wall_Ques innerW in io)
                 {
-                    int futureNUmber = CurrentNum.PrevNum;
+                    int futureNUmber = GameObject.FindGameObjectWithTag("Heroes").GetComponent<PlayerSpawn>().playerCount;
                     int num = innerW.gameObject.GetComponent<Wall_Ques>().n;
                     if (innerW.gameObject.GetComponent<Wall_Ques>().randomOperator == '+')
                         futureNUmber += num;
@@ -67,7 +68,7 @@ public class SpawnManager : MonoBehaviour
                     }
 
                     int x = max / 2;
-                    max = Random.Range(max - x / 2, max - x);
+                    max = Random.Range(max , max - x);
                 }
 
                 SpawnedLevel.GetComponentInChildren<PlayerSpawn>().SpawnMultipleObjects(max);
