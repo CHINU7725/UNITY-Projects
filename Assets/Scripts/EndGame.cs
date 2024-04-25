@@ -10,18 +10,23 @@ public class EndGame : MonoBehaviour
     public TextMeshProUGUI yop;
     private void Update()
     {
-        StartCoroutine(resetScene());
+        yop.text = GameObject.FindGameObjectWithTag("Heroes").transform.childCount.ToString();
+
+        if (GameObject.FindGameObjectWithTag("Heroes").transform.childCount == 0)
+        {
+            Debug.LogWarning(CurrentNum.characterNum);
+            CurrentNum.characterNum = 3;
+            StartCoroutine(resetScene());
+
+        }
+
+      
     }
 
     IEnumerator resetScene()
     {
-        yield return new WaitForSeconds(4);
-        yop.text = CurrentNum.characterNum.ToString();
-        if (CurrentNum.characterNum == 0)
-        {
-            Debug.LogWarning(CurrentNum.characterNum);
-            CurrentNum.characterNum = 3;
-            SceneManager.LoadScene("Start");
-        }
+        yield return new WaitForSeconds(0.7f);
+        SceneManager.LoadScene("Start");
+
     }
 }

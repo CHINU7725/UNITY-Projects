@@ -45,7 +45,7 @@ public class StartFighting : MonoBehaviour
             }
         }
 
-        if (CurrentNum.EnemyDeadCount == transform.parent.GetChild(0).gameObject.GetComponent<PlayerSpawn>().playerCount && isPlayerEnter)
+        if (transform.parent.GetChild(0).childCount==1 && isPlayerEnter)
         {
             Debug.Log("sd");
             player.gameObject.GetComponentInParent<SwipeMovement>().enabled = true;

@@ -68,7 +68,7 @@ public class SpawnManager : MonoBehaviour
                     }
 
                     int x = max / 2;
-                    max = Random.Range(max , max - x);
+                    max = Random.Range(max , max + x);
                 }
 
                 SpawnedLevel.GetComponentInChildren<PlayerSpawn>().SpawnMultipleObjects(max);
