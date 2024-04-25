@@ -27,18 +27,26 @@ public class SpawnManager : MonoBehaviour
             i++;
             if (i % 3 != 0)
             {
-              spawn = LeveList[1];
+                if (i % 5 == 0)
+                {
+                    i = 0;
+                    spawn = LeveList[9];
+                }
+                else
+                    spawn = LeveList[Random.Range(0,7)];
               
             }
             else
             {
+               
                 spawn = LeveList[8];
             }
+
             GameObject SpawnedLevel = Instantiate(spawn, spawnPoint.transform.position, Quaternion.identity);
 
-            if (i %3  == 0)
+            if (i %3  == 0 && i!=0)
             {
-                i = 0;
+              
                 Wall_Ques[] io = kaka.GetComponentsInChildren<Wall_Ques>();
                 int max = 0;
 
@@ -79,7 +87,7 @@ public class SpawnManager : MonoBehaviour
             {
                 SpawnedLevel.GetComponent<LevelDesigning>().PlaceObjects();
             }
-
+           
         }
     }
 }

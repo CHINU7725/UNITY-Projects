@@ -18,6 +18,7 @@ TagManager:
   - BakoozaBullet
   - Environment
   - Player22
+  - BigBoss
   layers:
   - Default
   - TransparentFX
