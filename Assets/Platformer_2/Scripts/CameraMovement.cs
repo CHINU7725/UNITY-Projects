@@ -11,6 +11,7 @@ public class CameraMovement : MonoBehaviour
             GameObject cameraParent = GameObject.FindGameObjectWithTag("Camera");
             cameraParent.transform.GetChild(0).gameObject.SetActive(false);
             cameraParent.transform.GetChild(1).gameObject.SetActive(true);
+            this.GetComponent<AudioSource>().enabled = true;
         }
     }
 }

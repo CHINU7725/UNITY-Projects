@@ -19,6 +19,7 @@ TagManager:
   - Environment
   - Player22
   - BigBoss
+  - Pop
   layers:
   - Default
   - TransparentFX

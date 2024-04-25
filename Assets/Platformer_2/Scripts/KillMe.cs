@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using CandyCoded.HapticFeedback;
 using UnityEngine;
 
@@ -11,6 +12,7 @@ public class KillMe : MonoBehaviour
         if (collision.gameObject.CompareTag("Obstacle"))
         {
             CurrentNum.characterNum--;
+            GameObject.FindGameObjectWithTag("Player22").GetComponentInChildren<AudioSource>().Play();
             Destroy(this.gameObject);
             HapticFeedback.MediumFeedback();
             var spawner = Instantiate(splash,new Vector3(transform.position.x,transform.position.y+1.3f,transform.position.z),Quaternion.identity);
@@ -28,6 +30,7 @@ public class KillMe : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         CurrentNum.characterNum--;
+        GameObject.FindGameObjectWithTag("Player22").GetComponentInChildren<AudioSource>().Play();
         Destroy(this.gameObject);
         HapticFeedback.MediumFeedback();
         var spawner = Instantiate(splash, new Vector3(transform.position.x, transform.position.y + 1.3f, transform.position.z), Quaternion.identity);

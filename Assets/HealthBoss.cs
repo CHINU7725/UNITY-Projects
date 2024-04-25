@@ -27,7 +27,7 @@ public class HealthBoss : MonoBehaviour
         progressBar.SetProgress(myHealth / 30, 3);
         if (myHealth == 0)
         {
-
+            this.GetComponent<AudioSource>().Play();
             this.gameObject.tag = "Untagged";
             this.GetComponent<Animator>().SetTrigger("7");
             StartCoroutine(iamDied());

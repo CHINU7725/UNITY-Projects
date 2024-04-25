@@ -8,6 +8,7 @@ using UnityEngine.UIElements;
 public class EndGame : MonoBehaviour
 {
     public TextMeshProUGUI yop;
+    public Canvas Died;
     private void Update()
     {
         yop.text = GameObject.FindGameObjectWithTag("Heroes").transform.childCount.ToString();
@@ -26,7 +27,7 @@ public class EndGame : MonoBehaviour
     IEnumerator resetScene()
     {
         yield return new WaitForSeconds(0.7f);
-        SceneManager.LoadScene("Start");
+        Died.gameObject.SetActive(true);
 
     }
 }
