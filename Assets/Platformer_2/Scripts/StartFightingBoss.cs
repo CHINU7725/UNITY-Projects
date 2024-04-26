@@ -13,15 +13,19 @@ public class StartFightingBoss : MonoBehaviour
     GameObject[] walls;
     GameObject[] Respawns;
     GameObject[] enviornments;
+
+    bool stop=true;
     private void Start()
     {
 
         target = GameObject.FindGameObjectWithTag("Heroes");
         parentTransform = transform.parent.GetChild(0);
+        StartCoroutine(oo());
     }
     void Update()
     {
 
+        
 
 
         if (isPlayerEnter)
@@ -29,20 +33,20 @@ public class StartFightingBoss : MonoBehaviour
             // Get the position of the target GameObject
             Vector3 targetPosition = target.transform.position;
 
+           
+
             // Loop through each child of the parent transform
             for (int i = 0; i < parentTransform.childCount; i++)
             {
                 // Get the child transform
                 Transform childTransform = parentTransform.GetChild(i);
 
-                // Calculate the direction from the child to the target
-                Vector3 direction = targetPosition - childTransform.position;
-
-                // Normalize the direction vector
-                Vector3 normalizedDirection = direction.normalized;
-
-                // Move the child towards the target using the specified speed
-                childTransform.position += normalizedDirection * moveSpeed * Time.deltaTime;
+                // Move the child transform's position towards the target position
+                childTransform.position = Vector3.MoveTowards(
+                    childTransform.position, // Current position of the child transform
+                    targetPosition, // Target position
+                    moveSpeed * Time.deltaTime // The distance to move each frame
+                );
             }
         }
 
@@ -98,6 +102,12 @@ public class StartFightingBoss : MonoBehaviour
             }
         }
 
+    }
+
+    IEnumerator oo()
+    {
+        yield return new WaitForSeconds(3);
+        stop = false;
     }
 
 

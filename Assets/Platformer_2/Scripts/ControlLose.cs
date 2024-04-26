@@ -8,7 +8,9 @@ public class ControlLose : MonoBehaviour
         if (other.gameObject.tag == "Heroes")
         {
             other.gameObject.GetComponentInParent<SwipeMovement>().enabled = false;
-            StartCoroutine(MoveTowardsTarget(other.gameObject.transform.parent.gameObject, new Vector3(0.6907592f, -7.193927f, 9.513805f), 10f));
+            this.GetComponent<AudioSource>().enabled = true;
+
+            StartCoroutine(MoveTowardsTarget(other.gameObject.transform.parent.gameObject, new Vector3(0.6907592f, -7.193927f, 9.513805f), 20f));
         }
     }
 
