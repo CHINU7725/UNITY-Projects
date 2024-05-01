@@ -8,11 +8,12 @@ using UnityEngine.UIElements;
 public class EndGame : MonoBehaviour
 {
     public TextMeshProUGUI yop;
+    public TextMeshProUGUI xop;
     public Canvas Died;
     private void Update()
     {
         yop.text = GameObject.FindGameObjectWithTag("Heroes").transform.childCount.ToString();
-
+        xop.text = GameObject.FindGameObjectWithTag("Heroes").transform.childCount.ToString();
         if (GameObject.FindGameObjectWithTag("Heroes").transform.childCount == 0)
         {
             Debug.LogWarning(CurrentNum.characterNum);

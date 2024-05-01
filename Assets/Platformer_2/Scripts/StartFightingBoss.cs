@@ -56,6 +56,7 @@ public class StartFightingBoss : MonoBehaviour
             player.gameObject.GetComponentInParent<SwipeMovement>().enabled = true;
             walls = GameObject.FindGameObjectsWithTag("Wall");
             Respawns = GameObject.FindGameObjectsWithTag("Respawn");
+            GameObject.FindGameObjectWithTag("Timer").GetComponent<TimeCalc>().enabled = true;
             enviornments = GameObject.FindGameObjectsWithTag("Environment");
             foreach (GameObject wall in walls)
             {
@@ -85,6 +86,7 @@ public class StartFightingBoss : MonoBehaviour
             walls = GameObject.FindGameObjectsWithTag("Wall");
             Respawns = GameObject.FindGameObjectsWithTag("Respawn");
             enviornments = GameObject.FindGameObjectsWithTag("Environment");
+            GameObject.FindGameObjectWithTag("Timer").GetComponent<TimeCalc>().enabled = false;
             foreach (GameObject wall in walls)
             {
                 wall.GetComponent<Plane>().enabled = false;

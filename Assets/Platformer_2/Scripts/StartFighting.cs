@@ -52,6 +52,7 @@ public class StartFighting : MonoBehaviour
             walls = GameObject.FindGameObjectsWithTag("Wall");
             Respawns = GameObject.FindGameObjectsWithTag("Respawn");
             enviornments = GameObject.FindGameObjectsWithTag("Environment");
+            GameObject.FindGameObjectWithTag("Timer").GetComponent<TimeCalc>().enabled = true;
             foreach (GameObject wall in walls)
             {
                 wall.GetComponent<Plane>().enabled = true;
@@ -79,6 +80,7 @@ public class StartFighting : MonoBehaviour
             walls = GameObject.FindGameObjectsWithTag("Wall");
             Respawns = GameObject.FindGameObjectsWithTag("Respawn");
             enviornments = GameObject.FindGameObjectsWithTag("Environment");
+            GameObject.FindGameObjectWithTag("Timer").GetComponent<TimeCalc>().enabled = false;
             foreach (GameObject wall in walls)
             {
                 wall.GetComponent<Plane>().enabled = false;

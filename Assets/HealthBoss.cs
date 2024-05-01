@@ -11,7 +11,7 @@ public class HealthBoss : MonoBehaviour
     IEnumerator iamDied()
     {
         yield return new WaitForSeconds(1f);
-        this.gameObject.SetActive(false);
+       /* this.gameObject.SetActive(false);*/
         isDead = true;
 
         GameObject cameraParent = GameObject.FindGameObjectWithTag("Camera");

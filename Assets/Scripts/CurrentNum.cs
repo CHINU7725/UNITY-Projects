@@ -14,8 +14,6 @@ public class CurrentNum : MonoBehaviour
 
     public static Vector3 enemyPosition=Vector3.up;
 
-    
-
 
 
     public static List<GameObject> players=new List<GameObject>();
