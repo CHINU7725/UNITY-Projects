@@ -28,7 +28,31 @@ public class EndGame : MonoBehaviour
     IEnumerator resetScene()
     {
         yield return new WaitForSeconds(0.7f);
+        GameObject[] wall = GameObject.FindGameObjectsWithTag("Wall");
+        GameObject[] res = GameObject.FindGameObjectsWithTag("Respawn");
+        GameObject[] env = GameObject.FindGameObjectsWithTag("Environment");
+        GameObject.FindGameObjectWithTag("Timer").GetComponent<TimeCalc>().enabled = false;
+        foreach (var i in wall)
+        {
+            i.GetComponent<Plane>().enabled = false;
+        }
+        foreach (var i in res)
+        {
+            i.GetComponent<Plane>().enabled = false;
+        }
+        foreach (var i in env)
+        {
+            if (i.GetComponent<Plane>() != null)
+                i.GetComponent<Plane>().enabled = false;
+            else
+            {
+                i.GetComponent<LandMove>().enabled = false;
+            }
+        }
+        GameObject.FindObjectOfType<SwipeMovement>().enabled = false;
         Died.gameObject.SetActive(true);
+        this.GetComponent<EndGame>().enabled=false;
+
 
     }
 }

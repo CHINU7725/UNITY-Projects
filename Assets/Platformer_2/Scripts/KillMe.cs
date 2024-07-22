@@ -17,6 +17,24 @@ public class KillMe : MonoBehaviour
         this.gameObject.layer = 8;
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Obstacle"))
+        {
+            Debug.LogError(CurrentNum.characterNum);
+            CurrentNum.characterNum--;
+            GameObject.FindGameObjectWithTag("Player22").GetComponentInChildren<AudioSource>().Play();
+            Destroy(this.gameObject);
+            HapticFeedback.MediumFeedback();
+            var spawner = Instantiate(splash, new Vector3(transform.position.x, transform.position.y + 1.3f, transform.position.z), Quaternion.identity);
+            spawner.transform.localScale = new Vector3(1.3f, 1.3f, 1.3f);
+        }
+        if (other.gameObject.CompareTag("BigBoss"))
+        {
+            StartCoroutine(KillyoMe(other.gameObject));
+        }
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Obstacle"))

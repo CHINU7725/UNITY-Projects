@@ -6,9 +6,13 @@ public class StopPlayer : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
+       
         if (other.gameObject.tag == "Player22")
         {
-            other.gameObject.layer = 0;
+           
+            
+            other.gameObject.GetComponent<CapsuleCollider>().isTrigger = true;
+  
         }
     }
 }
