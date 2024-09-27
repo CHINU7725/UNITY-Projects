@@ -6,7 +6,7 @@ public class Events : MonoBehaviour
     public void Play()
     {
         Debug.Log("Hi");
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("DemoScene");
     }
     public void Exit()
     {

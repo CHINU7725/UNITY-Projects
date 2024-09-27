@@ -90,7 +90,7 @@ public class EnemiesShow : MonoBehaviour
 
 
         this.gameObject.transform.rotation=Quaternion.Euler(0, 0, 0);
-        CurrentNum.PrevNum = CurrentNum.characterNum;
+  
     }
 
 

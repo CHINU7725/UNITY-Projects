@@ -8,15 +8,19 @@ TagManager:
   - Wall
   - Enemies
   - Ground
-  - StartFire
   - Bridge
   - BridgeSpawner
   - Camera
-  - Joystick
-  - Bullet
   - Heroes
+  - Obstacle
+  - Joystick
   - Bazooka
   - BakoozaBullet
+  - Environment
+  - Player22
+  - BigBoss
+  - Pop
+  - Timer
   layers:
   - Default
   - TransparentFX
@@ -27,9 +31,9 @@ TagManager:
   - Bullet
   - Enemy
   - Heroes
-  - 
-  - 
-  - 
+  - Magnet
+  - Obstacle
+  - Wall
   - 
   - 
   - 
